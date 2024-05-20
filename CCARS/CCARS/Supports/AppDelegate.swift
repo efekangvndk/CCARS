@@ -10,19 +10,25 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window1: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+                window1 = UIWindow(frame: UIScreen.main.bounds)
+                window1?.rootViewController = SplashScreenViewController() // Your main view controller
+                window1?.makeKeyAndVisible()
+        
+        
         return true
     }
 
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
+        
+        Thread.sleep(forTimeInterval: 3)
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
