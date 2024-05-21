@@ -18,6 +18,11 @@
 		AB1345172BFCD1010000B0D4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AB1345162BFCD1010000B0D4 /* FirebaseAuth */; };
 		AB1345192BFCD1010000B0D4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AB1345182BFCD1010000B0D4 /* FirebaseFirestore */; };
 		AB13451B2BFCD1010000B0D4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AB13451A2BFCD1010000B0D4 /* FirebaseStorage */; };
+		AB13451E2BFCD50E0000B0D4 /* firstImageConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13451D2BFCD50E0000B0D4 /* firstImageConstraint.swift */; };
+		AB1345212BFCD9A30000B0D4 /* UICompanentsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1345202BFCD9A30000B0D4 /* UICompanentsHelper.swift */; };
+		AB1345252BFCDB880000B0D4 /* Rock.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB1345232BFCDB880000B0D4 /* Rock.ttf */; };
+		AB1345262BFCDB880000B0D4 /* Retro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB1345242BFCDB880000B0D4 /* Retro.ttf */; };
+		AB1345282BFCDC0A0000B0D4 /* firtsLabelConstaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1345272BFCDC0A0000B0D4 /* firtsLabelConstaint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		AB1345032BFCCDD80000B0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB13450E2BFCCFA60000B0D4 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		AB1345112BFCD08E0000B0D4 /* LogingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogingInfo.swift; sourceTree = "<group>"; };
+		AB13451D2BFCD50E0000B0D4 /* firstImageConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstImageConstraint.swift; sourceTree = "<group>"; };
+		AB1345202BFCD9A30000B0D4 /* UICompanentsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICompanentsHelper.swift; sourceTree = "<group>"; };
+		AB1345232BFCDB880000B0D4 /* Rock.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rock.ttf; sourceTree = "<group>"; };
+		AB1345242BFCDB880000B0D4 /* Retro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Retro.ttf; sourceTree = "<group>"; };
+		AB1345272BFCDC0A0000B0D4 /* firtsLabelConstaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firtsLabelConstaint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +76,12 @@
 		AB1344F42BFCCDD70000B0D4 /* CCARS */ = {
 			isa = PBXGroup;
 			children = (
+				AB13451F2BFCD98D0000B0D4 /* UIHelpers */,
+				AB13451C2BFCD4A80000B0D4 /* Supporting */,
 				AB13450C2BFCCF860000B0D4 /* Core */,
 				AB13450B2BFCCF6A0000B0D4 /* Model */,
 				AB13450A2BFCCF620000B0D4 /* ViewModel */,
 				AB1345092BFCCF580000B0D4 /* Extension */,
-				AB1344F52BFCCDD70000B0D4 /* AppDelegate.swift */,
-				AB1344F72BFCCDD70000B0D4 /* SceneDelegate.swift */,
-				AB1344FE2BFCCDD80000B0D4 /* Assets.xcassets */,
 				AB1345002BFCCDD80000B0D4 /* LaunchScreen.storyboard */,
 				AB1345032BFCCDD80000B0D4 /* Info.plist */,
 			);
@@ -82,6 +91,8 @@
 		AB1345092BFCCF580000B0D4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AB13451D2BFCD50E0000B0D4 /* firstImageConstraint.swift */,
+				AB1345272BFCDC0A0000B0D4 /* firtsLabelConstaint.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -124,6 +135,34 @@
 			children = (
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		AB13451C2BFCD4A80000B0D4 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				AB1345222BFCDB7F0000B0D4 /* Fonts */,
+				AB1344F52BFCCDD70000B0D4 /* AppDelegate.swift */,
+				AB1344F72BFCCDD70000B0D4 /* SceneDelegate.swift */,
+				AB1344FE2BFCCDD80000B0D4 /* Assets.xcassets */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		AB13451F2BFCD98D0000B0D4 /* UIHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				AB1345202BFCD9A30000B0D4 /* UICompanentsHelper.swift */,
+			);
+			path = UIHelpers;
+			sourceTree = "<group>";
+		};
+		AB1345222BFCDB7F0000B0D4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AB1345232BFCDB880000B0D4 /* Rock.ttf */,
+				AB1345242BFCDB880000B0D4 /* Retro.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +234,8 @@
 			files = (
 				AB1344FF2BFCCDD80000B0D4 /* Assets.xcassets in Resources */,
 				AB1345022BFCCDD80000B0D4 /* Base in Resources */,
+				AB1345262BFCDB880000B0D4 /* Retro.ttf in Resources */,
+				AB1345252BFCDB880000B0D4 /* Rock.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,10 +247,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB13450F2BFCCFA60000B0D4 /* SplashScreen.swift in Sources */,
+				AB1345212BFCD9A30000B0D4 /* UICompanentsHelper.swift in Sources */,
+				AB13451E2BFCD50E0000B0D4 /* firstImageConstraint.swift in Sources */,
 				AB1344FA2BFCCDD70000B0D4 /* SplashScreenViewController.swift in Sources */,
 				AB1344F62BFCCDD70000B0D4 /* AppDelegate.swift in Sources */,
 				AB1344F82BFCCDD70000B0D4 /* SceneDelegate.swift in Sources */,
 				AB1345122BFCD08E0000B0D4 /* LogingInfo.swift in Sources */,
+				AB1345282BFCDC0A0000B0D4 /* firtsLabelConstaint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

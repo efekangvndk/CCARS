@@ -8,24 +8,29 @@
 import UIKit
 
 class SplashScreenViewController: UIViewController {
-
-    var splashViewController : SplashScreen!
+    
+    var splashViewController: SplashScreen!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         splashViewController = SplashScreen(frame: view.bounds)
         view.addSubview(splashViewController)
         splashSetup()
-        constrainSetting()
-    }
-
-    private func splashSetup(){
-        
-        view.backgroundColor = .red
     }
     
-    private func constrainSetting(){
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        splashViewController.animateViews()
+    }
+    
+    private func splashSetup() {
+        // Arka plan rengini ayarlama
+        view.backgroundColor = .black
         
+        // Görseli ayarlama
+        splashViewController.firstImage.image = UIImage(named: "logo")
     }
 }
+
+
 
