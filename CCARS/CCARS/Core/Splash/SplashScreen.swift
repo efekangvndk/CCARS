@@ -9,6 +9,8 @@ import UIKit
 
 class SplashScreen : UIView{
     
+   
+   
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
