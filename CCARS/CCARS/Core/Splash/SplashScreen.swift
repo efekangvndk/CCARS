@@ -14,7 +14,7 @@ class SplashScreen: UIView {
     
     override init(frame: CGRect) {
         firstImage = UIImageView()
-        firstLabel = UICompanentsHelper.creatCustomTextLabel(text: "Selam               CCARS'A hoşgeldiniz", size: 16, fontName: "Rock.ttf", textColor: .white)
+        firstLabel = UICompanentsHelper.creatCustomTextLabel(text: "Selam                       CCARS'A hoşgeldiniz", size: 16, fontName: "Rock.ttf", textColor: .white)
         super.init(frame: frame)
         setupView()
     }
