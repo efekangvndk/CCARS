@@ -20,7 +20,12 @@ class SplashScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        splashViewController.animateViews()
+        splashViewController.animateViews{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.transitionToOnboardingScreen()
+
+            }
+        }
     }
     
     private func splashSetup() {
@@ -29,6 +34,12 @@ class SplashScreenViewController: UIViewController {
         
         // Görseli ayarlama
         splashViewController.firstImage.image = UIImage(named: "logo")
+    }
+    private func transitionToOnboardingScreen(){
+        let onboardingVC = OnboardingScreenViewController()
+        onboardingVC.modalTransitionStyle = .crossDissolve
+        onboardingVC.modalPresentationStyle = .fullScreen
+        present(onboardingVC, animated: true,completion: nil)
     }
 }
 

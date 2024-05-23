@@ -9,34 +9,35 @@ import UIKit
 
 class SplashScreen: UIView {
     
-    var firstImage: UIImageView
-    var firstLabel: UILabel
+    var firstImage =  UIImageView()
+    var firstLabel = UICompanentsHelper.creatCustomTextLabel(text: "Selam \n CCARS'A hoşgeldiniz", size: 16, fontName: "Rock.ttf", textColor: .white)
+
+    
     
     override init(frame: CGRect) {
-        firstImage = UIImageView()
-        firstLabel = UICompanentsHelper.creatCustomTextLabel(text: "Selam                       CCARS'A hoşgeldiniz", size: 16, fontName: "Rock.ttf", textColor: .white)
         super.init(frame: frame)
-        setupView()
+        splashSetupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView() {
+    private func splashSetupView() {
         addSubview(firstImage)
         addSubview(firstLabel)
         
         // firstImage ve firstLabel için constraint'leri ayarlama
-        ImageViewLayout.configureConstraints(for: firstImage, in: self)
-        FirstLabelLayout.firstLabelLayoutCon(for: firstLabel, in: self)
+        YapıAyarları.ImageViewLayout.configureConstraints(for: firstImage, in: self)
+        YapıAyarları.FirstLabelLayout.firstLabelLayoutCon(for: firstLabel, in: self)
     }
     
-    func animateViews() {
-        // firstImage için animasyon (yukarı doğru kaydırma)
-        ImageViewLayout.animateImageView(firstImage) {
+    func animateViews(completion: @escaping () -> Void) {
+            // firstImage için animasyon (yukarı doğru kaydırma)
+        YapıAyarları.ImageViewLayout.animateImageView(firstImage) {
             // firstLabel için animasyon (yavaş yavaş görünür hale getirme)
-            FirstLabelLayout.animateLabel(self.firstLabel)
+        YapıAyarları.FirstLabelLayout.animateLabel(self.firstLabel)
+            completion()// Animasyon tamamlandığında completion bloğunu çağır
         }
     }
 }

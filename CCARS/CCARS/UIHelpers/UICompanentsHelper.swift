@@ -16,6 +16,7 @@ struct UICompanentsHelper{
         label.textColor = textColor
         label.numberOfLines = 0
         label.clipsToBounds = true
+        label.textAlignment = .center
         return label
     }
 }
