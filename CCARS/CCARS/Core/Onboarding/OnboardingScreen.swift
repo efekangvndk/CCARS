@@ -14,6 +14,7 @@ class OnboardingScreen: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         onbaordingSetupView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -22,5 +23,7 @@ class OnboardingScreen: UIView{
     
     private func onbaordingSetupView(){
         addSubview(imageTableCollectionView)
+        
+        YapıAyarları.CarImageCollectionView.carImageCollectionConstraint(for: imageTableCollectionView, in: self)
     }
 }

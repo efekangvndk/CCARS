@@ -9,14 +9,14 @@ import UIKit
 
 class OnboardingScreenViewController: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource{
    
-   let carImage = ["ecilips","r34","supra"] //Assetlerdeki 3 görselimizin adı.
+   let carImage = ["ff","walkers","dom"] //Assetlerdeki 3 görselimizin adı.
     
     override func viewDidLoad() {
         super.viewDidLoad()
         OnboardingSetupContoller()
     }
     private func OnboardingSetupContoller(){
-        view.backgroundColor = .red
+        view.backgroundColor = .gray
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
