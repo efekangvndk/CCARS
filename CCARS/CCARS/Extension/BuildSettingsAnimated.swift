@@ -51,21 +51,19 @@ class YapıAyarları{
             })
         }
     }
+    
     //MARK: CollectionViewConstraint
     struct CarImageCollectionView{
         static func carImageCollectionConstraint(for imageTableCollectionView : UICollectionView, in view : UIView){
 
-            imageTableCollectionView.backgroundColor = .black
-            imageTableCollectionView.layer.cornerRadius = 10
-            imageTableCollectionView.layer.cornerRadius = 1
-            imageTableCollectionView.layer.borderColor = UIColor.darkGray.cgColor
-            
+        
             NSLayoutConstraint.activate([
-                    imageTableCollectionView.topAnchor.constraint(equalTo: view.topAnchor,constant: 50),
-                    imageTableCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
-                    imageTableCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
-                    imageTableCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: 5)
+                imageTableCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+                imageTableCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
+                imageTableCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+                imageTableCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5)
             ])
+            imageTableCollectionView.layer.cornerRadius = 10
         }
     }
 }
