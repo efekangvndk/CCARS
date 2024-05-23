@@ -9,34 +9,26 @@ import UIKit
 
 class OnboardingScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var imageTableCollectionView: UICollectionView!
+    var onboardingControllerView = OnboardingScreen()
     let carImages = ["ff", "walkers", "dom"] // Assets'teki görsel dosyalarının adları
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        onboardingControllerView = OnboardingScreen(frame: view.bounds)
+        view.addSubview(onboardingControllerView)
         setupView()
         constrainTableCollection()
     }
     
     private func setupView(){
         view.backgroundColor = .gray
-        
-        //MARK: CollectionViewsettings
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 1
-        imageTableCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        imageTableCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        imageTableCollectionView.backgroundColor = .black
-        imageTableCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        imageTableCollectionView.delegate = self
-        imageTableCollectionView.dataSource = self
-        imageTableCollectionView.isPagingEnabled = true // pagingEnabled özelliği
-        view.addSubview(imageTableCollectionView)
+        onboardingControllerView.imageTableCollectionView.delegate = self
+        onboardingControllerView.imageTableCollectionView.dataSource = self
     }
     
     private func constrainTableCollection(){
-        YapıAyarları.CarImageCollectionView.carImageCollectionConstraint(for: imageTableCollectionView, in: view)
+        YapıAyarları.ButtonLayout.buttonLoginSign(for: onboardingControllerView.buttonLoginSign, in: view)
+        YapıAyarları.CarImageCollectionView.carImageCollectionConstraint(for: onboardingControllerView.imageTableCollectionView, in: view)
     }
     
     // MARK: - UICollectionViewDataSource
@@ -50,12 +42,11 @@ class OnboardingScreenViewController: UIViewController, UICollectionViewDelegate
         let imageView = UIImageView(frame: cell.contentView.bounds)
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: carImages[indexPath.item])
-        imageView.layer.cornerRadius = 10 // Burada cornerRadius ekleniyor
-        imageView.layer.masksToBounds = true // MaskToBounds kullanılmalıdır
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
         cell.contentView.addSubview(imageView)
         return cell
     }
-    
     
     // MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

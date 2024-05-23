@@ -58,12 +58,24 @@ class YapıAyarları{
 
         
             NSLayoutConstraint.activate([
-                imageTableCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-                imageTableCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
-                imageTableCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
-                imageTableCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5)
+                imageTableCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+                imageTableCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -380),
+                imageTableCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+                imageTableCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
             ])
             imageTableCollectionView.layer.cornerRadius = 10
+        }
+    }
+    
+    struct ButtonLayout{
+        static func buttonLoginSign(for buttonLoginSign : UIButton , in view: UIView ){
+            
+            NSLayoutConstraint.activate([
+                buttonLoginSign.topAnchor.constraint(equalTo: view.topAnchor, constant: 800),
+                buttonLoginSign.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -20),
+                buttonLoginSign.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -100),
+                buttonLoginSign.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100)
+            ])
         }
     }
 }
