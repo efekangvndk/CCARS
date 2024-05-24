@@ -22,7 +22,7 @@ class OnboardingScreenViewController: UIViewController, UICollectionViewDelegate
     
     private func setupView() {
         navigationController?.navigationBar.tintColor = .red
-        view.backgroundColor = .gray
+        view.backgroundColor = .darkGray
         onboardingControllerView.buttonLoginSign.addTarget(self, action: #selector(addButtonDown), for: .touchDown)
         onboardingControllerView.buttonLoginSign.addTarget(self, action: #selector(addButtonUp), for: [.touchUpInside, .touchUpOutside])
         onboardingControllerView.imageTableCollectionView.delegate = self
@@ -63,14 +63,14 @@ class OnboardingScreenViewController: UIViewController, UICollectionViewDelegate
             self.onboardingControllerView.buttonLoginSign.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
         }
         onboardingControllerView.buttonLoginSign.alpha = 0.5
-        onboardingControllerView.buttonLoginSign.backgroundColor = .black
+        onboardingControllerView.buttonLoginSign.backgroundColor = .systemRed
     }
     @objc func addButtonUp() {
         UIView.animate(withDuration: 0.2) {
             self.onboardingControllerView.buttonLoginSign.transform = CGAffineTransform.identity
         }
         onboardingControllerView.buttonLoginSign.alpha = 1.0
-        onboardingControllerView.buttonLoginSign.backgroundColor = .black
+        onboardingControllerView.buttonLoginSign.backgroundColor = .white
 
         let loginVC = LoginScreenController()
         navigationController?.pushViewController(loginVC, animated: true)

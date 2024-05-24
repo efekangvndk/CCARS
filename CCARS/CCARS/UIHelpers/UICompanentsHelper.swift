@@ -20,13 +20,14 @@ struct UICompanentsHelper{
         return label
     }
     
-    static func creatCustomButton(buttonName: String, tintColor: UIColor,cornerRadius : CGFloat?, borderWidth : CGFloat?, borderColor : CGColor?)-> UIButton{
+    static func creatCustomButton(buttonName: String, tintColor: UIColor,cornerRadius : CGFloat?, borderWidth : CGFloat?, borderColor : CGColor?, backgroundC : CGColor)-> UIButton{
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(buttonName, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.setTitleColor(tintColor, for: .normal)
         button.layer.borderColor = borderColor
+        button.layer.backgroundColor = backgroundC
         
         if let cornerRadius = cornerRadius{
             button.layer.cornerRadius = cornerRadius

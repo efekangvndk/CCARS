@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingScreen: UIView {
     
-    var buttonLoginSign = UICompanentsHelper.creatCustomButton(buttonName:"Login / Sign In", tintColor: .black, cornerRadius: 10, borderWidth: 1, borderColor: UIColor.black.cgColor)
+    var buttonLoginSign = UICompanentsHelper.creatCustomButton(buttonName:"Login / Sign In", tintColor: .black, cornerRadius: 10, borderWidth: 1, borderColor: UIColor.black.cgColor, backgroundC: UIColor.white.cgColor)
     var imageTableCollectionView : UICollectionView
     
     override init(frame: CGRect) {

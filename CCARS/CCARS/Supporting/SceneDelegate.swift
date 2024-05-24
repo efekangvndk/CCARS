@@ -15,10 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let onboardingScreen = OnboardingScreenViewController()
-        let onboardingNavController = UINavigationController(rootViewController: onboardingScreen)
+        let mainScreen = SplashScreenViewController()
+        let mainNavController = UINavigationController(rootViewController: mainScreen)
         
-        window.rootViewController = onboardingNavController
+        window.rootViewController = mainNavController
         
         self.window = window
         window.makeKeyAndVisible()
