@@ -22,6 +22,8 @@
 		AB1345212BFCD9A30000B0D4 /* UICompanentsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1345202BFCD9A30000B0D4 /* UICompanentsHelper.swift */; };
 		AB1345252BFCDB880000B0D4 /* Rock.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB1345232BFCDB880000B0D4 /* Rock.ttf */; };
 		AB1345262BFCDB880000B0D4 /* Retro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB1345242BFCDB880000B0D4 /* Retro.ttf */; };
+		AB60B30A2C000D2A00E18358 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB60B3092C000D2A00E18358 /* LoginScreen.swift */; };
+		AB60B30D2C000D4100E18358 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB60B30C2C000D4100E18358 /* LoginScreenController.swift */; };
 		ABD936EF2BFF6EE6003A7BCD /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */; };
 		ABD936F12BFF6F1B003A7BCD /* OnboardingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */; };
 		ABED67362BFF8F060095F7F7 /* carSound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABED67352BFF8F060095F7F7 /* carSound1.mp3 */; };
@@ -41,6 +43,8 @@
 		AB1345202BFCD9A30000B0D4 /* UICompanentsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICompanentsHelper.swift; sourceTree = "<group>"; };
 		AB1345232BFCDB880000B0D4 /* Rock.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rock.ttf; sourceTree = "<group>"; };
 		AB1345242BFCDB880000B0D4 /* Retro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Retro.ttf; sourceTree = "<group>"; };
+		AB60B3092C000D2A00E18358 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		AB60B30C2C000D4100E18358 /* LoginScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
 		ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewController.swift; sourceTree = "<group>"; };
 		ABED67352BFF8F060095F7F7 /* carSound1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = carSound1.mp3; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		AB13450C2BFCCF860000B0D4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AB60B3082C000D1900E18358 /* SignIn */,
+				AB60B3072C000D0800E18358 /* Login */,
 				AB1345102BFCCFB40000B0D4 /* Onboarding */,
 				AB13450D2BFCCF8C0000B0D4 /* Splash */,
 			);
@@ -137,8 +143,8 @@
 		AB1345102BFCCFB40000B0D4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */,
 				ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */,
+				ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -169,6 +175,22 @@
 				AB1345242BFCDB880000B0D4 /* Retro.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AB60B3072C000D0800E18358 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB60B3092C000D2A00E18358 /* LoginScreen.swift */,
+				AB60B30C2C000D4100E18358 /* LoginScreenController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AB60B3082C000D1900E18358 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,10 +280,12 @@
 				AB13451E2BFCD50E0000B0D4 /* BuildSettingsAnimated.swift in Sources */,
 				AB1344FA2BFCCDD70000B0D4 /* SplashScreenViewController.swift in Sources */,
 				ABD936EF2BFF6EE6003A7BCD /* OnboardingScreen.swift in Sources */,
+				AB60B30D2C000D4100E18358 /* LoginScreenController.swift in Sources */,
 				AB1344F62BFCCDD70000B0D4 /* AppDelegate.swift in Sources */,
 				ABD936F12BFF6F1B003A7BCD /* OnboardingScreenViewController.swift in Sources */,
 				AB1344F82BFCCDD70000B0D4 /* SceneDelegate.swift in Sources */,
 				AB1345122BFCD08E0000B0D4 /* LogingInfo.swift in Sources */,
+				AB60B30A2C000D2A00E18358 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
