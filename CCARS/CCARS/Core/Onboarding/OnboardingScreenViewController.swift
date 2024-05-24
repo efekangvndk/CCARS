@@ -20,13 +20,15 @@ class OnboardingScreenViewController: UIViewController, UICollectionViewDelegate
         constrainTableCollection()
     }
     
-    private func setupView(){
+    private func setupView() {
+        navigationController?.navigationBar.tintColor = .red
         view.backgroundColor = .gray
-        onboardingControllerView.buttonLoginSign.addTarget(self, action: #selector (addButtonDown), for: .touchDown)
-        onboardingControllerView.buttonLoginSign.addTarget(self, action: #selector (addButtonUp), for: [.touchUpInside , .touchUpOutside])
+        onboardingControllerView.buttonLoginSign.addTarget(self, action: #selector(addButtonDown), for: .touchDown)
+        onboardingControllerView.buttonLoginSign.addTarget(self, action: #selector(addButtonUp), for: [.touchUpInside, .touchUpOutside])
         onboardingControllerView.imageTableCollectionView.delegate = self
         onboardingControllerView.imageTableCollectionView.dataSource = self
     }
+
     
     private func constrainTableCollection(){
         YapıAyarları.ButtonLayout.buttonLoginSign(for: onboardingControllerView.buttonLoginSign, in: view)
@@ -63,14 +65,14 @@ class OnboardingScreenViewController: UIViewController, UICollectionViewDelegate
         onboardingControllerView.buttonLoginSign.alpha = 0.5
         onboardingControllerView.buttonLoginSign.backgroundColor = .black
     }
-    @objc func addButtonUp(){
+    @objc func addButtonUp() {
         UIView.animate(withDuration: 0.2) {
             self.onboardingControllerView.buttonLoginSign.transform = CGAffineTransform.identity
         }
         onboardingControllerView.buttonLoginSign.alpha = 1.0
-        onboardingControllerView.buttonLoginSign.backgroundColor = .red
-        let VC = LoginScreenController()
-        navigationController?.pushViewController(VC, animated: true)
+        onboardingControllerView.buttonLoginSign.backgroundColor = .black
+
+        let loginVC = LoginScreenController()
+        navigationController?.pushViewController(loginVC, animated: true)
     }
-    
 }

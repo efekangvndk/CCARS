@@ -11,16 +11,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let WindowScene = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
         
-        let window = UIWindow(windowScene: WindowScene)
+        let onboardingScreen = OnboardingScreenViewController()
+        let onboardingNavController = UINavigationController(rootViewController: onboardingScreen)
+        
+        window.rootViewController = onboardingNavController
+        
         self.window = window
-        window.rootViewController = SplashScreenViewController()
         window.makeKeyAndVisible()
-        
     }
+
+    // Diğer SceneDelegate fonksiyonları buraya eklenecek...
+
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -13,7 +13,6 @@ class LoginScreenController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loginScreenControllerView = LoginScreen(frame: view.bounds)
         setupView2()
     }
