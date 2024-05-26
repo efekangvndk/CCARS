@@ -165,18 +165,4 @@ class YapıAyarları{
             ])
         }
     }
-    struct yadaLabel {
-        static func yadaLabelConst(for yadaLabel: UILabel , in view : UIView){
-            yadaLabel.translatesAutoresizingMaskIntoConstraints = false
-            
-            NSLayoutConstraint.activate([
-                yadaLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 632),
-                yadaLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-                yadaLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-                yadaLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -194),
-                yadaLabel.widthAnchor.constraint(equalToConstant: 390),
-                yadaLabel.heightAnchor.constraint(equalToConstant: 17)
-            ])
-        }
-    }
 }
