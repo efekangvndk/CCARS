@@ -13,15 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        
-        let mainScreen = SplashScreenViewController()
+    
+         window = UIWindow(windowScene: windowScene)
+        let mainScreen = LoginScreenController()
         let mainNavController = UINavigationController(rootViewController: mainScreen)
-        
-        window.rootViewController = mainNavController
-        
-        self.window = window
-        window.makeKeyAndVisible()
+        window?.rootViewController = mainNavController
+        window?.makeKeyAndVisible()
     }
 
     // Diğer SceneDelegate fonksiyonları buraya eklenecek...

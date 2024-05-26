@@ -55,8 +55,8 @@ class YapıAyarları{
     //MARK: CollectionViewConstraint
     struct CarImageCollectionView{
         static func carImageCollectionConstraint(for imageTableCollectionView : UICollectionView, in view : UIView){
-
-        
+            
+            
             NSLayoutConstraint.activate([
                 imageTableCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
                 imageTableCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -380),
@@ -78,6 +78,65 @@ class YapıAyarları{
             ])
         }
     }
-}
+    
+    struct nameSurnameConst {
+        static func nameSurnametext(for nameSurname: UITextField, in view: UIView, previousTextField: UIView? = nil) {
+            nameSurname.translatesAutoresizingMaskIntoConstraints = false
+            nameSurname.layer.masksToBounds = true
+            let topConstraint: NSLayoutConstraint
+            if let previousTextField = previousTextField {
+                topConstraint = nameSurname.topAnchor.constraint(equalTo: previousTextField.bottomAnchor, constant: 16)
+            } else {
+                topConstraint = nameSurname.topAnchor.constraint(equalTo: view.topAnchor, constant: 226)
+            }
+            NSLayoutConstraint.activate([
+                topConstraint,
+                nameSurname.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+                nameSurname.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+                nameSurname.widthAnchor.constraint(equalToConstant: 342),
+                nameSurname.heightAnchor.constraint(equalToConstant: 44)
+            ])
+        }
+    }
 
+    struct passwordTextField {
+        static func passwordTextFieldConst(for passwordTextField: UITextField, in view: UIView, previousTextField: UIView? = nil) {
+            passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+            passwordTextField.layer.masksToBounds = true
+            let topConstraint: NSLayoutConstraint
+            if let previousTextField = previousTextField {
+                topConstraint = passwordTextField.topAnchor.constraint(equalTo: previousTextField.bottomAnchor, constant: 16)
+            } else {
+                topConstraint = passwordTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 286)
+            }
+            NSLayoutConstraint.activate([
+                topConstraint,
+                passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+                passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+                passwordTextField.widthAnchor.constraint(equalToConstant: 342),
+                passwordTextField.heightAnchor.constraint(equalToConstant: 44)
+            ])
+        }
+    }
+
+    struct emailTextField {
+        static func emailTextFieldConst(for emailTextField: UITextField, in view: UIView, previousTextField: UIView? = nil) {
+            emailTextField.translatesAutoresizingMaskIntoConstraints = false
+            emailTextField.layer.masksToBounds = true
+            let topConstraint: NSLayoutConstraint
+            if let previousTextField = previousTextField {
+                topConstraint = emailTextField.topAnchor.constraint(equalTo: previousTextField.bottomAnchor, constant: 16)
+            } else {
+                topConstraint = emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 346)
+            }
+            NSLayoutConstraint.activate([
+                topConstraint,
+                emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+                emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+                emailTextField.widthAnchor.constraint(equalToConstant: 342),
+                emailTextField.heightAnchor.constraint(equalToConstant: 44)
+            ])
+        }
+    }
+}
 

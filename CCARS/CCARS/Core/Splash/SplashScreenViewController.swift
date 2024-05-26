@@ -53,6 +53,7 @@ class SplashScreenViewController: UIViewController {
         }
     }
     
+    //MARK: Diğer ekrana otomatik geçiş işlemi.
     private func transitionToOnboardingScreen(){
         let onboardingVC = OnboardingScreenViewController()
         onboardingVC.modalTransitionStyle = .crossDissolve

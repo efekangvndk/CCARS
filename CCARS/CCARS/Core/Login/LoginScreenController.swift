@@ -14,10 +14,11 @@ class LoginScreenController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginScreenControllerView = LoginScreen(frame: view.bounds)
+        view.addSubview(loginScreenControllerView)
         setupView2()
     }
     
     private func setupView2(){
-        view.backgroundColor = .blue
+        view.backgroundColor = .black
     }
 }
