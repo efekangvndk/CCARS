@@ -16,12 +16,12 @@ class LoginScreen: UIView {
     var loginButton = UICompanentsHelper.creatCustomButton(buttonName: "Kayıt Ol", tintColor: .black, cornerRadius: 20, borderWidth: 0.6, borderColor: UIColor.red.cgColor, backgroundC: UIColor.white.cgColor)
     
     var nameSurname = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white , textColor: .white, placeholder: "Ad & Soyad", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none, borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
-
+    
     var passwordTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Parola", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none , borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
-
+    
     var emailTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Email", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none , borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
     
-    let separatorView  = UIView() // AYIRICI
+    let separatorView  = UIView()  // AYIRICI
     let leftLine = UIView()        // SOL KISIM
     let rightLine = UIView()       // SAĞ KISIM
     
@@ -41,10 +41,15 @@ class LoginScreen: UIView {
         addSubview(passwordTextField)
         addSubview(loginButton)
         addSubview(loginScrennImage)
+        addSubview(separatorView)
+        
         addSubview(leftLine)
         addSubview(rightLine)
-        addSubview(separatorView)
         addSubview(yadaOrAble)
+        
+        leftLine.backgroundColor = .gray
+        rightLine.backgroundColor = .gray
+        
         nameSurname.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: nameSurname.frame.height))
         nameSurname.leftViewMode = .always
         passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: nameSurname.frame.height))
@@ -56,30 +61,37 @@ class LoginScreen: UIView {
         YapıAyarları.nameSurnameConst.nameSurnametext(for: nameSurname , in: self)
         YapıAyarları.emailTextField.emailTextFieldConst(for: emailTextField, in: self)
         YapıAyarları.passwordTextField.passwordTextFieldConst(for: passwordTextField, in: self)
+        yadaOrAble.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        leftLine.translatesAutoresizingMaskIntoConstraints = false
+        rightLine.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func legendConstSetting(){
         NSLayoutConstraint.activate([
-                    // Separator view constraints
-                    separatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
-                    separatorView.centerYAnchor.constraint(equalTo: centerYAnchor),
-                    separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-                    separatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-
-                    // Left line constraints
-                    leftLine.leadingAnchor.constraint(equalTo: separatorView.leadingAnchor),
-                    leftLine.trailingAnchor.constraint(equalTo: yadaOrAble.leadingAnchor, constant: -8),
-                    leftLine.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor),
-                    leftLine.heightAnchor.constraint(equalToConstant: 1),
-
-                    // Right line constraints
-                    rightLine.leadingAnchor.constraint(equalTo: yadaOrAble.trailingAnchor, constant: 8),
-                    rightLine.trailingAnchor.constraint(equalTo: separatorView.trailingAnchor),
-                    rightLine.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor),
-                    rightLine.heightAnchor.constraint(equalToConstant: 1),
-
-                    // "ya da" label constraints
-                    yadaOrAble.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor)
-                ])
-            }
-        }
+            // Separator view constraints
+            separatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            separatorView.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            separatorView.heightAnchor.constraint(equalToConstant: 20),
+            
+            // Left line constraints
+            leftLine.leadingAnchor.constraint(equalTo: separatorView.leadingAnchor),
+            leftLine.trailingAnchor.constraint(equalTo: yadaOrAble.leadingAnchor, constant: -8),
+            leftLine.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor),
+            leftLine.heightAnchor.constraint(equalToConstant: 1),
+            leftLine.widthAnchor.constraint(equalTo: rightLine.widthAnchor),
+            
+            // Right line constraints
+            rightLine.leadingAnchor.constraint(equalTo: yadaOrAble.trailingAnchor, constant: 8),
+            rightLine.trailingAnchor.constraint(equalTo: separatorView.trailingAnchor),
+            rightLine.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor),
+            rightLine.heightAnchor.constraint(equalToConstant: 1),
+            
+            // "ya da" label constraints
+            yadaOrAble.centerXAnchor.constraint(equalTo: separatorView.centerXAnchor),
+            yadaOrAble.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor)
+        ])
+    }
+}
