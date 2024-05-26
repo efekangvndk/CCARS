@@ -20,5 +20,6 @@ class LoginScreenController : UIViewController {
     
     private func setupView2(){
         view.backgroundColor = .black
+        loginScreenControllerView.loginScrennImage.image = UIImage(named: "logo")
     }
 }

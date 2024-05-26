@@ -35,6 +35,7 @@ class YapıAyarları{
     struct FirstLabelLayout {
         static func firstLabelLayoutCon(for firstLabel: UILabel , in view : UIView){
             firstLabel.translatesAutoresizingMaskIntoConstraints = false
+            
             NSLayoutConstraint.activate([
                 firstLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 firstLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor), // hata bunu centerYAnchor ile yapmamız lazımdı.
@@ -55,7 +56,6 @@ class YapıAyarları{
     //MARK: CollectionViewConstraint
     struct CarImageCollectionView{
         static func carImageCollectionConstraint(for imageTableCollectionView : UICollectionView, in view : UIView){
-            
             
             NSLayoutConstraint.activate([
                 imageTableCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
@@ -79,6 +79,19 @@ class YapıAyarları{
         }
     }
     
+    struct loginButton{
+        static func loginButtonConst(for loginButton : UIButton, in view: UIView){
+            
+            NSLayoutConstraint.activate([
+                loginButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 543),
+                loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
+                loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -43),
+                loginButton.widthAnchor.constraint(equalToConstant: 304),
+                loginButton.heightAnchor.constraint(equalToConstant: 40)
+            ])
+        }
+    }
+    
     struct nameSurnameConst {
         static func nameSurnametext(for nameSurname: UITextField, in view: UIView, previousTextField: UIView? = nil) {
             nameSurname.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +111,7 @@ class YapıAyarları{
             ])
         }
     }
-
+    
     struct passwordTextField {
         static func passwordTextFieldConst(for passwordTextField: UITextField, in view: UIView, previousTextField: UIView? = nil) {
             passwordTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -118,7 +131,7 @@ class YapıAyarları{
             ])
         }
     }
-
+    
     struct emailTextField {
         static func emailTextFieldConst(for emailTextField: UITextField, in view: UIView, previousTextField: UIView? = nil) {
             emailTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -138,5 +151,32 @@ class YapıAyarları{
             ])
         }
     }
+    struct loginScreenImage {
+        static func loginScreenConst(for loginScreenImage : UIImageView, in view: UIView) {
+            loginScreenImage.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                loginScreenImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 61.30),
+                loginScreenImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -741.40),
+                loginScreenImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -110),
+                loginScreenImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 110),
+                loginScreenImage.widthAnchor.constraint(equalToConstant: 160),
+                loginScreenImage.heightAnchor.constraint(equalToConstant: 40)
+            ])
+        }
+    }
+    struct yadaLabel {
+        static func yadaLabelConst(for yadaLabel: UILabel , in view : UIView){
+            yadaLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                yadaLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 632),
+                yadaLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+                yadaLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+                yadaLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -194),
+                yadaLabel.widthAnchor.constraint(equalToConstant: 390),
+                yadaLabel.heightAnchor.constraint(equalToConstant: 17)
+            ])
+        }
+    }
 }
-
