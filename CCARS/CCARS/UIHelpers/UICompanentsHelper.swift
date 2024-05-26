@@ -8,7 +8,7 @@
 import UIKit
 
 struct UICompanentsHelper{
-    static func creatCustomTextLabel(text : String , size : Int , fontName : String , textColor: UIColor) -> UILabel {
+    static func creatCustomTextLabel(text : String , size : Int , fontName : String , textColor: UIColor , backgraondColor: UIColor? ,borderColor : CGColor? ,cornerRadius : CGFloat? , borderWidth : CGFloat?) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
@@ -17,6 +17,14 @@ struct UICompanentsHelper{
         label.numberOfLines = 0
         label.clipsToBounds = true
         label.textAlignment = .center
+        label.backgroundColor = backgraondColor
+        label.layer.borderColor = borderColor
+        if let cornerRadius = cornerRadius {
+            label.layer.cornerRadius = cornerRadius
+        }
+        if let borderWidth = borderWidth {
+            label.layer.borderWidth = borderWidth
+        }
         return label
     }
     

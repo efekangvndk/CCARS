@@ -11,7 +11,9 @@ class LoginScreen: UIView {
     
     var loginScrennImage = UIImageView()
     
-    var yadaOrAble = UICompanentsHelper.creatCustomTextLabel(text: "Ya Da", size: 13, fontName: "Retro", textColor: .systemGray)
+    var kayitOlTitleLabel = UICompanentsHelper.creatCustomTextLabel(text: "Kayıt Ol", size: 15, fontName: "Retro", textColor: .white, backgraondColor: .red, borderColor: nil, cornerRadius: 24, borderWidth: 0.6)
+    var girisYapTitleLabel = UICompanentsHelper.creatCustomTextLabel(text: "Giriş Yap", size: 15, fontName: "Retro", textColor: .white, backgraondColor: nil, borderColor: UIColor.red.cgColor, cornerRadius: 24, borderWidth: 1)
+    var yadaOrAble = UICompanentsHelper.creatCustomTextLabel(text: " Ya Da ", size: 14 , fontName: "Retro", textColor: .gray, backgraondColor: nil, borderColor: nil, cornerRadius: nil, borderWidth: nil)
     
     var loginButton = UICompanentsHelper.creatCustomButton(buttonName: "Kayıt Ol", tintColor: .black, cornerRadius: 20, borderWidth: 0.6, borderColor: UIColor.red.cgColor, backgroundC: UIColor.white.cgColor)
     
@@ -24,6 +26,7 @@ class LoginScreen: UIView {
     let separatorView  = UIView()  // AYIRICI
     let leftLine = UIView()        // SOL KISIM
     let rightLine = UIView()       // SAĞ KISIM
+    let containerView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +39,13 @@ class LoginScreen: UIView {
     }
     
     private func setupView() {
+
+        addSubview(containerView)
+        containerView.addSubview(kayitOlTitleLabel)
+        containerView.addSubview(girisYapTitleLabel)
+        
+        addSubview(kayitOlTitleLabel)
+        addSubview(girisYapTitleLabel)
         addSubview(nameSurname)
         addSubview(emailTextField)
         addSubview(passwordTextField)
@@ -65,10 +75,47 @@ class LoginScreen: UIView {
         separatorView.translatesAutoresizingMaskIntoConstraints = false
         leftLine.translatesAutoresizingMaskIntoConstraints = false
         rightLine.translatesAutoresizingMaskIntoConstraints = false
+        kayitOlTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        girisYapTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            containerView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: 150),
+            containerView.heightAnchor.constraint(equalToConstant: 44),
+            containerView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 20),
+            containerView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -20),
+            
+            kayitOlTitleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            kayitOlTitleLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
+            kayitOlTitleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            kayitOlTitleLabel.widthAnchor.constraint(equalTo: girisYapTitleLabel.widthAnchor),
+            
+            girisYapTitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            girisYapTitleLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
+            girisYapTitleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            girisYapTitleLabel.leadingAnchor.constraint(equalTo: kayitOlTitleLabel.trailingAnchor, constant: 16)
+        ])
+        
     }
     
-    private func legendConstSetting(){
+    private func legendConstSetting() {
+       
         NSLayoutConstraint.activate([
+            // "Kayıt Ol" Label Constraints
+            kayitOlTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 150),
+            kayitOlTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            kayitOlTitleLabel.trailingAnchor.constraint(equalTo: girisYapTitleLabel.leadingAnchor),
+            kayitOlTitleLabel.widthAnchor.constraint(equalTo: girisYapTitleLabel.widthAnchor),
+            kayitOlTitleLabel.heightAnchor.constraint(equalToConstant: 44),
+            
+            // "Giriş Yap" Label Constraints
+            girisYapTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 150),
+            girisYapTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            girisYapTitleLabel.leadingAnchor.constraint(equalTo: kayitOlTitleLabel.trailingAnchor),
+            girisYapTitleLabel.widthAnchor.constraint(equalTo: kayitOlTitleLabel.widthAnchor),
+            girisYapTitleLabel.heightAnchor.constraint(equalToConstant: 44),
+            
             // Separator view constraints
             separatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
             separatorView.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),

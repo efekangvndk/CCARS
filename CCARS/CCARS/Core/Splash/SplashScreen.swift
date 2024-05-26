@@ -10,7 +10,7 @@ import UIKit
 class SplashScreen: UIView {
     
     var firstImage =  UIImageView()
-    var firstLabel = UICompanentsHelper.creatCustomTextLabel(text: "Selam \n CCARS'A hoşgeldiniz", size: 16, fontName: "Rock.ttf", textColor: .white)
+    var firstLabel = UICompanentsHelper.creatCustomTextLabel(text: "Selam \n CCARS'A hoşgeldiniz", size: 16, fontName: "Rock.ttf", textColor: .white, backgraondColor: nil, borderColor: nil, cornerRadius: nil, borderWidth: nil)
 
     
     
