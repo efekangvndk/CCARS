@@ -13,6 +13,8 @@ class SignInScreen : UIView {
     
     let signInKayıtOlLabel = UICompanentsHelper.creatCustomTextLabel(text: "         Kayıt Ol", size: 15, fontName: "pp", textColor: .white , backgraondColor: .black, borderColor: UIColor.red.cgColor , cornerRadius: 24, borderWidth: 0.6)
     let signInGirisLabel = UICompanentsHelper.creatCustomTextLabel(text: "Giriş Yap", size: 15, fontName: "Rooster", textColor: .white, backgraondColor: .red, borderColor:  UIColor.red.cgColor , cornerRadius: 24, borderWidth: 0.6)
+    let signEmailTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Email :", placeholderColor: .gray, fontName: "Reestor", size: 14, borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
+    let signPasswordTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Parola : ", placeholderColor: .gray, fontName: "pp", size: 14, borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,9 +32,16 @@ class SignInScreen : UIView {
         addSubview(signInGirisLabel)
         addSubview(signInKayıtOlLabel)
         sendSubviewToBack(signInKayıtOlLabel)
+        
+        addSubview(signPasswordTextField)
+        addSubview(signEmailTextField)
        
+        
         signInGirisLabel.translatesAutoresizingMaskIntoConstraints = false
         signInKayıtOlLabel.translatesAutoresizingMaskIntoConstraints = false
         signInTopImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        YapıAyarları.signPassword.signPasswordConst(for: signPasswordTextField, in: self)
+        YapıAyarları.signEmail.signEmailConst(for: signEmailTextField, in: self)
     }
 }

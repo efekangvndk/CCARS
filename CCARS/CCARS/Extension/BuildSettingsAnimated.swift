@@ -107,7 +107,7 @@ class YapıAyarları{
                 nameSurname.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
                 nameSurname.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                 nameSurname.widthAnchor.constraint(equalToConstant: 342),
-                nameSurname.heightAnchor.constraint(equalToConstant: 50)
+                nameSurname.heightAnchor.constraint(equalToConstant: 44)
             ])
         }
     }
@@ -174,6 +174,46 @@ class YapıAyarları{
                 warningLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -397),
                 warningLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
                 warningLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -18)
+            ])
+        }
+    }
+    
+    struct signEmail {
+        static func signEmailConst(for signEmailTextField: UITextField, in view: UIView, previousTextField: UIView? = nil) {
+            signEmailTextField.translatesAutoresizingMaskIntoConstraints = false
+            signEmailTextField.layer.masksToBounds = true
+            let topConstraint: NSLayoutConstraint
+            if let previousTextField = previousTextField {
+                topConstraint = signEmailTextField.topAnchor.constraint(equalTo: previousTextField.bottomAnchor, constant: 16)
+            } else {
+                topConstraint = signEmailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 286)
+            }
+            NSLayoutConstraint.activate([
+                topConstraint,
+                signEmailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+                signEmailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+                signEmailTextField.widthAnchor.constraint(equalToConstant: 342),
+                signEmailTextField.heightAnchor.constraint(equalToConstant: 44)
+            ])
+        }
+    }
+    
+    struct signPassword {
+        static func signPasswordConst(for signPassword: UITextField, in view: UIView, previousTextField: UIView? = nil) {
+            signPassword.translatesAutoresizingMaskIntoConstraints = false
+            signPassword.layer.masksToBounds = true
+            let topConstraint: NSLayoutConstraint
+            if let previousTextField = previousTextField {
+                topConstraint = signPassword.topAnchor.constraint(equalTo: previousTextField.bottomAnchor, constant: 16)
+            } else {
+                topConstraint = signPassword.topAnchor.constraint(equalTo: view.topAnchor, constant: 342)
+            }
+            NSLayoutConstraint.activate([
+                topConstraint,
+                signPassword.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+                signPassword.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+                signPassword.widthAnchor.constraint(equalToConstant: 342),
+                signPassword.heightAnchor.constraint(equalToConstant: 44)
             ])
         }
     }
