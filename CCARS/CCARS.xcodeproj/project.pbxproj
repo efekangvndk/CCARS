@@ -24,6 +24,8 @@
 		AB1345262BFCDB880000B0D4 /* Retro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB1345242BFCDB880000B0D4 /* Retro.ttf */; };
 		AB60B30A2C000D2A00E18358 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB60B3092C000D2A00E18358 /* LoginScreen.swift */; };
 		AB60B30D2C000D4100E18358 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB60B30C2C000D4100E18358 /* LoginScreenController.swift */; };
+		ABAA06132C05140C0057A3AA /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA06122C05140C0057A3AA /* SignInScreen.swift */; };
+		ABAA06152C05141C0057A3AA /* SignInScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA06142C05141C0057A3AA /* SignInScreenController.swift */; };
 		ABD936EF2BFF6EE6003A7BCD /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */; };
 		ABD936F12BFF6F1B003A7BCD /* OnboardingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */; };
 		ABDC911A2C0411570041281C /* pp.TTF in Resources */ = {isa = PBXBuildFile; fileRef = ABDC91192C0411560041281C /* pp.TTF */; };
@@ -47,6 +49,8 @@
 		AB1345242BFCDB880000B0D4 /* Retro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Retro.ttf; sourceTree = "<group>"; };
 		AB60B3092C000D2A00E18358 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		AB60B30C2C000D4100E18358 /* LoginScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
+		ABAA06122C05140C0057A3AA /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
+		ABAA06142C05141C0057A3AA /* SignInScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenController.swift; sourceTree = "<group>"; };
 		ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewController.swift; sourceTree = "<group>"; };
 		ABDC91192C0411560041281C /* pp.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = pp.TTF; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 		AB60B3082C000D1900E18358 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				ABAA06122C05140C0057A3AA /* SignInScreen.swift */,
+				ABAA06142C05141C0057A3AA /* SignInScreenController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -288,8 +294,10 @@
 				AB13450F2BFCCFA60000B0D4 /* SplashScreen.swift in Sources */,
 				AB1345212BFCD9A30000B0D4 /* UICompanentsHelper.swift in Sources */,
 				AB13451E2BFCD50E0000B0D4 /* BuildSettingsAnimated.swift in Sources */,
+				ABAA06152C05141C0057A3AA /* SignInScreenController.swift in Sources */,
 				AB1344FA2BFCCDD70000B0D4 /* SplashScreenViewController.swift in Sources */,
 				ABD936EF2BFF6EE6003A7BCD /* OnboardingScreen.swift in Sources */,
+				ABAA06132C05140C0057A3AA /* SignInScreen.swift in Sources */,
 				AB60B30D2C000D4100E18358 /* LoginScreenController.swift in Sources */,
 				AB1344F62BFCCDD70000B0D4 /* AppDelegate.swift in Sources */,
 				ABD936F12BFF6F1B003A7BCD /* OnboardingScreenViewController.swift in Sources */,

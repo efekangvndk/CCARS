@@ -11,17 +11,20 @@ class LoginScreen: UIView {
     
     var loginScrennImage = UIImageView()
     
-    var kayitOlTitleLabel = UICompanentsHelper.creatCustomTextLabel(text: "Kayıt Ol", size: 15, fontName:"Rooster.ttf", textColor: .white, backgraondColor: .red, borderColor: nil, cornerRadius: 24, borderWidth: 0.6)
+    
+    var warningLabel = UICompanentsHelper.creatCustomTextLabel(text: "Uygulamaya üye olarak; Üyelik Sözleşmesi’ni ve Kişisel Veriler ile İlgili Aydınlatma Metni’ni okuduğunuzu ve kabul ettiğinizi onaylamaktasınız.", size: 11, fontName: "Rooster", textColor: .white, backgraondColor: nil, borderColor: nil, cornerRadius: nil, borderWidth: nil)
+   
+    var kayitOlTitleLabel = UICompanentsHelper.creatCustomTextLabel(text: "Kayıt Ol", size: 15, fontName:"Rooster", textColor: .white, backgraondColor: .red, borderColor: nil, cornerRadius: 24, borderWidth: 0.6)
     var girisYapTitleLabel = UICompanentsHelper.creatCustomTextLabel(text: "Giriş Yap", size: 15, fontName: "Retro", textColor: .white, backgraondColor: nil, borderColor: UIColor.red.cgColor, cornerRadius: 24, borderWidth: 1)
-    var yadaOrAble = UICompanentsHelper.creatCustomTextLabel(text: " Ya Da ", size: 14 , fontName: "Retro", textColor: .gray, backgraondColor: nil, borderColor: nil, cornerRadius: nil, borderWidth: nil)
+    var yadaOrAble = UICompanentsHelper.creatCustomTextLabel(text: " Ya Da ", size: 14 , fontName: "Rock", textColor: .gray, backgraondColor: nil, borderColor: nil, cornerRadius: nil, borderWidth: nil)
     
     var loginButton = UICompanentsHelper.creatCustomButton(buttonName: "Kayıt Ol", tintColor: .black, cornerRadius: 20, borderWidth: 0.6, borderColor: UIColor.red.cgColor, backgroundC: UIColor.white.cgColor)
     
-    var nameSurname = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white , textColor: .white, placeholder: "Ad & Soyad", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none, borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
+    var nameSurname = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white , textColor: .white, placeholder: "Ad & Soyad :", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none, borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
     
-    var passwordTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Parola", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none , borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
+    var passwordTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Parola :", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none , borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
     
-    var emailTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Email", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none , borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
+    var emailTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Email :", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none , borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
     
     let separatorView  = UIView()  // AYIRICI
     let leftLine = UIView()        // SOL KISIM
@@ -43,9 +46,6 @@ class LoginScreen: UIView {
         addSubview(girisYapTitleLabel)
         sendSubviewToBack(girisYapTitleLabel)
         
-        let originalText = girisYapTitleLabel.text ?? ""
-        let shiftedText = String(repeating: " ", count: 25) + originalText // Metni sağa kaydırmak için 10 boşluk ekleyelim
-        girisYapTitleLabel.text = shiftedText
         
         addSubview(nameSurname)
         addSubview(emailTextField)
@@ -54,14 +54,14 @@ class LoginScreen: UIView {
         addSubview(loginScrennImage)
         addSubview(separatorView)
         
+        addSubview(warningLabel)
+        
         addSubview(leftLine)
         addSubview(rightLine)
         addSubview(yadaOrAble)
         
         leftLine.backgroundColor = .gray
         rightLine.backgroundColor = .gray
-        
-        
         
         nameSurname.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: nameSurname.frame.height))
         nameSurname.leftViewMode = .always
@@ -89,13 +89,13 @@ class LoginScreen: UIView {
             kayitOlTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 150),
             kayitOlTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
             kayitOlTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -195),
-            kayitOlTitleLabel.heightAnchor.constraint(equalToConstant: 44),
+            kayitOlTitleLabel.heightAnchor.constraint(equalToConstant: 50),
             kayitOlTitleLabel.widthAnchor.constraint(equalToConstant: 120),
             // Giriş Katmanının Constraints
             girisYapTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 150),
             girisYapTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -75),
             girisYapTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
-            girisYapTitleLabel.heightAnchor.constraint(equalToConstant: 44),
+            girisYapTitleLabel.heightAnchor.constraint(equalToConstant: 50),
             girisYapTitleLabel.widthAnchor.constraint(equalToConstant: 240),
             
             // Separator view constraints

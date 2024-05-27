@@ -107,7 +107,7 @@ class YapıAyarları{
                 nameSurname.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
                 nameSurname.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                 nameSurname.widthAnchor.constraint(equalToConstant: 342),
-                nameSurname.heightAnchor.constraint(equalToConstant: 44)
+                nameSurname.heightAnchor.constraint(equalToConstant: 50)
             ])
         }
     }
@@ -127,7 +127,7 @@ class YapıAyarları{
                 passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
                 passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                 passwordTextField.widthAnchor.constraint(equalToConstant: 342),
-                passwordTextField.heightAnchor.constraint(equalToConstant: 44)
+                passwordTextField.heightAnchor.constraint(equalToConstant: 50)
             ])
         }
     }
@@ -147,7 +147,7 @@ class YapıAyarları{
                 emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
                 emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                 emailTextField.widthAnchor.constraint(equalToConstant: 342),
-                emailTextField.heightAnchor.constraint(equalToConstant: 44)
+                emailTextField.heightAnchor.constraint(equalToConstant: 50)
             ])
         }
     }
@@ -162,6 +162,18 @@ class YapıAyarları{
                 loginScreenImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 110),
                 loginScreenImage.widthAnchor.constraint(equalToConstant: 160),
                 loginScreenImage.heightAnchor.constraint(equalToConstant: 40)
+            ])
+        }
+    }
+    
+    struct warningLabel{
+        static func warningLabelConst(for warningLabel: UILabel, in view: UIView){
+            warningLabel.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                warningLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 414),
+                warningLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -397),
+                warningLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
+                warningLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -18)
             ])
         }
     }
