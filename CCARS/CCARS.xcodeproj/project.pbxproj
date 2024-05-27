@@ -29,7 +29,6 @@
 		ABD936EF2BFF6EE6003A7BCD /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */; };
 		ABD936F12BFF6F1B003A7BCD /* OnboardingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */; };
 		ABDC911A2C0411570041281C /* pp.TTF in Resources */ = {isa = PBXBuildFile; fileRef = ABDC91192C0411560041281C /* pp.TTF */; };
-		ABDC911C2C0412C90041281C /* Rooster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABDC911B2C0412C90041281C /* Rooster.ttf */; };
 		ABED67362BFF8F060095F7F7 /* carSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABED67352BFF8F060095F7F7 /* carSound.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewController.swift; sourceTree = "<group>"; };
 		ABDC91192C0411560041281C /* pp.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = pp.TTF; sourceTree = "<group>"; };
-		ABDC911B2C0412C90041281C /* Rooster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Rooster.ttf; path = "../../../../Downloads/rooster-font/Rooster.ttf"; sourceTree = "<group>"; };
 		ABDC911D2C0413D10041281C /* Rooster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rooster.ttf; sourceTree = "<group>"; };
 		ABED67352BFF8F060095F7F7 /* carSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = carSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,8 +75,6 @@
 		AB1344E92BFCCDD70000B0D4 = {
 			isa = PBXGroup;
 			children = (
-				AB1345222BFCDB7F0000B0D4 /* Fonts */,
-				ABDC911B2C0412C90041281C /* Rooster.ttf */,
 				AB1344F42BFCCDD70000B0D4 /* CCARS */,
 				AB1344F32BFCCDD70000B0D4 /* Products */,
 			);
@@ -104,6 +100,7 @@
 				AB1345002BFCCDD80000B0D4 /* LaunchScreen.storyboard */,
 				AB1345032BFCCDD80000B0D4 /* Info.plist */,
 				ABED67352BFF8F060095F7F7 /* carSound.mp3 */,
+				AB1345222BFCDB7F0000B0D4 /* Fonts */,
 			);
 			path = CCARS;
 			sourceTree = "<group>";
@@ -279,7 +276,6 @@
 				AB1344FF2BFCCDD80000B0D4 /* Assets.xcassets in Resources */,
 				AB1345022BFCCDD80000B0D4 /* Base in Resources */,
 				AB1345262BFCDB880000B0D4 /* Retro.ttf in Resources */,
-				ABDC911C2C0412C90041281C /* Rooster.ttf in Resources */,
 				AB1345252BFCDB880000B0D4 /* Rock.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -186,7 +186,7 @@ class YapıAyarları{
             if let previousTextField = previousTextField {
                 topConstraint = signEmailTextField.topAnchor.constraint(equalTo: previousTextField.bottomAnchor, constant: 16)
             } else {
-                topConstraint = signEmailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 286)
+                topConstraint = signEmailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 226)
             }
             NSLayoutConstraint.activate([
                 topConstraint,
@@ -206,7 +206,7 @@ class YapıAyarları{
             if let previousTextField = previousTextField {
                 topConstraint = signPassword.topAnchor.constraint(equalTo: previousTextField.bottomAnchor, constant: 16)
             } else {
-                topConstraint = signPassword.topAnchor.constraint(equalTo: view.topAnchor, constant: 342)
+                topConstraint = signPassword.topAnchor.constraint(equalTo: view.topAnchor, constant: 286)
             }
             NSLayoutConstraint.activate([
                 topConstraint,
@@ -214,6 +214,61 @@ class YapıAyarları{
                 signPassword.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                 signPassword.widthAnchor.constraint(equalToConstant: 342),
                 signPassword.heightAnchor.constraint(equalToConstant: 44)
+            ])
+        }
+    }
+    
+    struct girisButton{
+        static func girisButtonConst(for girisButton : UIButton, in view: UIView){
+            girisButton.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                girisButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 395),
+                girisButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -408),
+                girisButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
+                girisButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -43),
+                girisButton.widthAnchor.constraint(equalToConstant: 304),
+                girisButton.heightAnchor.constraint(equalToConstant: 40)
+            ])
+            
+        }
+    }
+    
+    struct forgettenPassword {
+        static func forgettenPasswordConst(for forgettenPasswordButton: UIButton, in view: UIView){
+            forgettenPasswordButton.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                forgettenPasswordButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 362),
+                forgettenPasswordButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -464),
+                forgettenPasswordButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 125),
+                forgettenPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -125),
+                forgettenPasswordButton.widthAnchor.constraint(equalToConstant: 120),
+                forgettenPasswordButton.heightAnchor.constraint(equalToConstant: 17)
+            ])
+        }
+    }
+    
+    struct girisLabel {
+        static func girişLabelConst(for girisLabel : UILabel, in view: UIView){
+            NSLayoutConstraint.activate([
+                girisLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+                girisLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 195),
+                girisLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -75),
+                girisLabel.heightAnchor.constraint(equalToConstant: 44),
+                girisLabel.widthAnchor.constraint(equalToConstant: 120)
+            ])
+        }
+    }
+    
+    struct kayitOlLabel{
+        static func kayitLabelConst(for kahyitOlLabel : UILabel, in view: UIView){
+            NSLayoutConstraint.activate([
+                kahyitOlLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+                kahyitOlLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -75),
+                kahyitOlLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 75),
+                kahyitOlLabel.heightAnchor.constraint(equalToConstant: 44),
+                kahyitOlLabel.widthAnchor.constraint(equalToConstant: 240)
             ])
         }
     }
