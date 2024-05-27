@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = mainNavController
         window?.makeKeyAndVisible()
     }
-
+    
     // Diğer SceneDelegate fonksiyonları buraya eklenecek...
 
 

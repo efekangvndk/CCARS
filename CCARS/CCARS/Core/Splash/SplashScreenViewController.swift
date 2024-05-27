@@ -10,7 +10,7 @@ import AVFoundation
 
 class SplashScreenViewController: UIViewController {
     
-    var splashViewController: SplashScreen!
+    var splashViewController = SplashScreen()
     var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
@@ -56,11 +56,25 @@ class SplashScreenViewController: UIViewController {
     //MARK: Diğer ekrana otomatik geçiş işlemi.
     private func transitionToOnboardingScreen(){
         let onboardingVC = OnboardingScreenViewController()
-        onboardingVC.modalTransitionStyle = .crossDissolve
-        onboardingVC.modalPresentationStyle = .fullScreen
-        present(onboardingVC, animated: true,completion: nil)
+        let navigationController = UINavigationController(rootViewController: onboardingVC)
+        navigationController.modalTransitionStyle = .crossDissolve
+        navigationController.modalPresentationStyle = .fullScreen
+        // Eklenen: OnboardingScreenViewController'ı UINavigationController içinde göster //derin hata
+        present(navigationController, animated: true, completion: nil)
+        
+    //MARK: öncesi
+        /*
+         private func transitionToOnboardingScreen(){
+             let onboardingVC = OnboardingScreenViewController()
+             onboardingVC.modalTransitionStyle = .crossDissolve
+             onboardingVC.modalPresentationStyle = .fullScreen
+             present(onboardingVC, animated: true, completion: nil)
+         }
+         */
+        
     }
 }
+
 
 
 

@@ -28,7 +28,6 @@ class OnboardingScreenViewController: UIViewController, UICollectionViewDelegate
         onboardingControllerView.imageTableCollectionView.delegate = self
         onboardingControllerView.imageTableCollectionView.dataSource = self
     }
-
     
     private func constrainTableCollection(){
         YapıAyarları.ButtonLayout.buttonLoginSign(for: onboardingControllerView.buttonLoginSign, in: view)
@@ -74,5 +73,9 @@ class OnboardingScreenViewController: UIViewController, UICollectionViewDelegate
 
         let loginVC = LoginScreenController()
         navigationController?.pushViewController(loginVC, animated: true)
+        // Silinen: Eğer OnboardingScreenViewController bir modal olarak sunulsaydı, navigationController nil olurdu
+        // self.present(loginVC, animated: true, completion: nil)
     }
 }
+
+
