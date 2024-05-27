@@ -26,6 +26,8 @@
 		AB60B30D2C000D4100E18358 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB60B30C2C000D4100E18358 /* LoginScreenController.swift */; };
 		ABD936EF2BFF6EE6003A7BCD /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */; };
 		ABD936F12BFF6F1B003A7BCD /* OnboardingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */; };
+		ABDC911A2C0411570041281C /* pp.TTF in Resources */ = {isa = PBXBuildFile; fileRef = ABDC91192C0411560041281C /* pp.TTF */; };
+		ABDC911C2C0412C90041281C /* Rooster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABDC911B2C0412C90041281C /* Rooster.ttf */; };
 		ABED67362BFF8F060095F7F7 /* carSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABED67352BFF8F060095F7F7 /* carSound.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,9 @@
 		AB60B30C2C000D4100E18358 /* LoginScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
 		ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewController.swift; sourceTree = "<group>"; };
+		ABDC91192C0411560041281C /* pp.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = pp.TTF; sourceTree = "<group>"; };
+		ABDC911B2C0412C90041281C /* Rooster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Rooster.ttf; path = "../../../../Downloads/rooster-font/Rooster.ttf"; sourceTree = "<group>"; };
+		ABDC911D2C0413D10041281C /* Rooster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rooster.ttf; sourceTree = "<group>"; };
 		ABED67352BFF8F060095F7F7 /* carSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = carSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +73,8 @@
 		AB1344E92BFCCDD70000B0D4 = {
 			isa = PBXGroup;
 			children = (
+				AB1345222BFCDB7F0000B0D4 /* Fonts */,
+				ABDC911B2C0412C90041281C /* Rooster.ttf */,
 				AB1344F42BFCCDD70000B0D4 /* CCARS */,
 				AB1344F32BFCCDD70000B0D4 /* Products */,
 			);
@@ -152,7 +159,6 @@
 		AB13451C2BFCD4A80000B0D4 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				AB1345222BFCDB7F0000B0D4 /* Fonts */,
 				AB1344F52BFCCDD70000B0D4 /* AppDelegate.swift */,
 				AB1344F72BFCCDD70000B0D4 /* SceneDelegate.swift */,
 				AB1344FE2BFCCDD80000B0D4 /* Assets.xcassets */,
@@ -171,6 +177,8 @@
 		AB1345222BFCDB7F0000B0D4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				ABDC911D2C0413D10041281C /* Rooster.ttf */,
+				ABDC91192C0411560041281C /* pp.TTF */,
 				AB1345232BFCDB880000B0D4 /* Rock.ttf */,
 				AB1345242BFCDB880000B0D4 /* Retro.ttf */,
 			);
@@ -260,10 +268,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABDC911A2C0411570041281C /* pp.TTF in Resources */,
 				ABED67362BFF8F060095F7F7 /* carSound.mp3 in Resources */,
 				AB1344FF2BFCCDD80000B0D4 /* Assets.xcassets in Resources */,
 				AB1345022BFCCDD80000B0D4 /* Base in Resources */,
 				AB1345262BFCDB880000B0D4 /* Retro.ttf in Resources */,
+				ABDC911C2C0412C90041281C /* Rooster.ttf in Resources */,
 				AB1345252BFCDB880000B0D4 /* Rock.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ class LoginScreen: UIView {
     
     var loginScrennImage = UIImageView()
     
-    var kayitOlTitleLabel = UICompanentsHelper.creatCustomTextLabel(text: "Kayıt Ol", size: 15, fontName: "Retro", textColor: .white, backgraondColor: .red, borderColor: nil, cornerRadius: 24, borderWidth: 0.6)
+    var kayitOlTitleLabel = UICompanentsHelper.creatCustomTextLabel(text: "Kayıt Ol", size: 15, fontName:"Rooster.ttf", textColor: .white, backgraondColor: .red, borderColor: nil, cornerRadius: 24, borderWidth: 0.6)
     var girisYapTitleLabel = UICompanentsHelper.creatCustomTextLabel(text: "Giriş Yap", size: 15, fontName: "Retro", textColor: .white, backgraondColor: nil, borderColor: UIColor.red.cgColor, cornerRadius: 24, borderWidth: 1)
     var yadaOrAble = UICompanentsHelper.creatCustomTextLabel(text: " Ya Da ", size: 14 , fontName: "Retro", textColor: .gray, backgraondColor: nil, borderColor: nil, cornerRadius: nil, borderWidth: nil)
     
@@ -43,6 +43,10 @@ class LoginScreen: UIView {
         addSubview(girisYapTitleLabel)
         sendSubviewToBack(girisYapTitleLabel)
         
+        let originalText = girisYapTitleLabel.text ?? ""
+        let shiftedText = String(repeating: " ", count: 25) + originalText // Metni sağa kaydırmak için 10 boşluk ekleyelim
+        girisYapTitleLabel.text = shiftedText
+        
         addSubview(nameSurname)
         addSubview(emailTextField)
         addSubview(passwordTextField)
@@ -57,8 +61,7 @@ class LoginScreen: UIView {
         leftLine.backgroundColor = .gray
         rightLine.backgroundColor = .gray
         
-    
-        girisYapTitleLabel.textAlignment = .right
+        
         
         nameSurname.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: nameSurname.frame.height))
         nameSurname.leftViewMode = .always
@@ -88,7 +91,7 @@ class LoginScreen: UIView {
             kayitOlTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -195),
             kayitOlTitleLabel.heightAnchor.constraint(equalToConstant: 44),
             kayitOlTitleLabel.widthAnchor.constraint(equalToConstant: 120),
-                        // Giriş Katmanının Constraints
+            // Giriş Katmanının Constraints
             girisYapTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 150),
             girisYapTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -75),
             girisYapTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),

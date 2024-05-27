@@ -6,6 +6,8 @@
 	<array>
 		<string>Rock.ttf</string>
 		<string>Retro.ttf</string>
+		<string>pp.TTF</string>
+		<string>Rooster.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
