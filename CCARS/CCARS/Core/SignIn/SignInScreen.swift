@@ -15,7 +15,7 @@ class SignInScreen : UIView {
     
     let yadaLabel = UICompanentsHelper.creatCustomTextLabel(text: "Ya Da", size: 14, fontName: "pp", textColor: .gray, backgraondColor: nil, borderColor: nil, cornerRadius: nil, borderWidth: nil)
     let signInKayıtOlLabel = UICompanentsHelper.creatCustomTextLabel(text: "         Kayıt Ol", size: 15, fontName: "pp", textColor: .white , backgraondColor: .black, borderColor: UIColor.red.cgColor , cornerRadius: 24, borderWidth: 0.6)
-    let signInGirisLabel = UICompanentsHelper.creatCustomTextLabel(text: "Giriş Yap", size: 15, fontName: "Rooster", textColor: .white, backgraondColor: .red, borderColor:  UIColor.red.cgColor , cornerRadius: 24, borderWidth: 0.6)
+    let signInGirisLabel = UICompanentsHelper.creatCustomTextLabel(text: "", size: 15, fontName: "Rooster", textColor: .white, backgraondColor: .red, borderColor:  UIColor.red.cgColor , cornerRadius: 24, borderWidth: 0.6)
     let signEmailTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Email :", placeholderColor: .gray, fontName: "Reestor", size: 14, borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
     let signPasswordTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Parola : ", placeholderColor: .gray, fontName: "pp", size: 14, borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
     let girisYapButton = UICompanentsHelper.creatCustomButton(buttonName: "Giriş Yap", tintColor: .black, cornerRadius: 24, borderWidth: 0.6, borderColor: UIColor.black.cgColor, backgroundC: UIColor.white.cgColor)
