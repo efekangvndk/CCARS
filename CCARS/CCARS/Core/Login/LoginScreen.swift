@@ -128,7 +128,7 @@ class LoginScreen: UIView {
             loginUpButton.widthAnchor.constraint(equalToConstant: 120), // Genişlik boyutunu 120 olarak değiştirdim
 
             signInUpButton.topAnchor.constraint(equalTo: topAnchor, constant: 150),
-            signInUpButton.leadingAnchor.constraint(equalTo: loginUpButton.trailingAnchor, constant: 20), // loginUpButton'ın hemen sağına yerleştirdim
+            signInUpButton.leadingAnchor.constraint(equalTo: loginUpButton.trailingAnchor, constant: 2), // loginUpButton'ın hemen sağına yerleştirdim
             signInUpButton.heightAnchor.constraint(equalToConstant: 50),
             signInUpButton.widthAnchor.constraint(equalToConstant: 120), // Genişlik boyutunu 120 olarak değiştirdim
         

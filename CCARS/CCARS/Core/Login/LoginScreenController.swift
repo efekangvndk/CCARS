@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginScreenController: UIViewController {
     
@@ -29,12 +30,13 @@ class LoginScreenController: UIViewController {
         loginScreenControllerView.signPasswordTextField.isHidden = true
         
         //Buttonlar ve işlevleri
-        loginScreenControllerView.loginUpButton.addTarget(self, action: #selector(didLoginButtonDown), for: .touchDown)
-        loginScreenControllerView.loginUpButton.addTarget(self, action: #selector(didLoginButtonUp), for: [.touchUpInside, .touchUpOutside])
+        loginScreenControllerView.loginUpButton.addTarget(self, action: #selector(loginDownButtonClicked), for: .touchDown)
+        loginScreenControllerView.loginUpButton.addTarget(self, action: #selector(loginUpButtonClicked), for: [.touchUpInside, .touchUpOutside])
+        loginScreenControllerView.loginButton.addTarget(self, action: #selector(baseButton), for: .touchUpInside)
         
         
-        loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(didSingInButtonDown), for: .touchDown)
-        loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(didSingInButtonUp), for: [.touchUpInside , .touchUpOutside])
+        loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(signInDownButtonClicked), for: .touchDown)
+        loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(signInUpButtonClicked), for: [.touchUpInside , .touchUpOutside])
         loginScreenControllerView.signInUpButton.isEnabled = false
         
         // Giriş Yap title label oluşturulduktan sonra metni sağa kaydır
@@ -69,14 +71,51 @@ class LoginScreenController: UIViewController {
     }
     
     
-    @objc func didLoginButtonDown() {
+    @objc func loginDownButtonClicked() {
         UIView.animate(withDuration: 0.2) {
             self.loginScreenControllerView.loginUpButton.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
         }
     }
-
-    @objc func didLoginButtonUp() {
-        // Animasyon başlatma işlemini UIView.animate bloğu içine taşıyarak görünürlük değişikliğinden hemen sonra başlat
+    
+    @objc func loginUpButtonClicked() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.loginScreenControllerView.signInUpButton.transform = CGAffineTransform.identity
+            
+            // Giriş Yap butonunun animasyonlarını eski haline getir
+            self.loginScreenControllerView.signEmailTextField.alpha = 0 // Opaklığını 0 yaparak gizle
+            self.loginScreenControllerView.signPasswordTextField.alpha = 0 // Opaklığını 0 yaparak gizle
+            // Diğer öğeleri görünür hale getir
+            self.loginScreenControllerView.emailTextField.isHidden = false
+            self.loginScreenControllerView.passwordTextField.isHidden = false
+            self.loginScreenControllerView.nameSurname.isHidden = false
+            self.loginScreenControllerView.nameSurname.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
+            self.loginScreenControllerView.emailTextField.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
+            self.loginScreenControllerView.passwordTextField.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
+            
+            // Animasyonu başlat
+            self.animateDownText(self.loginScreenControllerView.nameSurname)
+            self.animateDownText(self.loginScreenControllerView.emailTextField)
+            self.animateDownText(self.loginScreenControllerView.passwordTextField)
+            self.labelComeBack(self.loginScreenControllerView.kayitOlTitleLabel)
+        }, completion: { _ in
+            // Animasyon tamamlandıktan sonra giriş alanlarını tekrar eski haline getir
+            self.loginScreenControllerView.signEmailTextField.isHidden = true
+            self.loginScreenControllerView.signPasswordTextField.isHidden = true
+            
+            // Eğer loginUpButton'a basıldıysa ve signUpButton aktif hale gelmişse, signUpButton'ı tekrar devre dışı bırak
+            self.loginScreenControllerView.signInUpButton.isEnabled = true
+            self.isAnimationStarted = false
+        })
+        
+    }
+    
+    @objc func signInDownButtonClicked() {
+        UIView.animate(withDuration: 0.2) {
+            self.loginScreenControllerView.signInUpButton.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
+        }
+    }
+    
+    @objc func signInUpButtonClicked() {
         UIView.animate(withDuration: 0.5, animations: {
             self.loginScreenControllerView.loginUpButton.transform = CGAffineTransform.identity
             
@@ -86,14 +125,13 @@ class LoginScreenController: UIViewController {
             // Diğer öğeleri görünür hale getir
             self.loginScreenControllerView.signEmailTextField.isHidden = false
             self.loginScreenControllerView.signPasswordTextField.isHidden = false
+            self.loginScreenControllerView.signEmailTextField.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
+            self.loginScreenControllerView.signPasswordTextField.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
             
             // Animasyonu başlat
-            if !self.isAnimationStarted && !self.loginScreenControllerView.signEmailTextField.isHidden{
-                self.animateTextFieldEmail(self.loginScreenControllerView.signEmailTextField)
-                self.animateTextFieldEmail(self.loginScreenControllerView.signPasswordTextField)
-                self.labelAnimate(self.loginScreenControllerView.kayitOlTitleLabel)
-                self.isAnimationStarted = true
-            }
+            self.animateTextFieldEmail(self.loginScreenControllerView.signEmailTextField)
+            self.animateTextFieldEmail(self.loginScreenControllerView.signPasswordTextField)
+            self.labelAnimate(self.loginScreenControllerView.kayitOlTitleLabel)
         }, completion: { _ in
             // Animasyon tamamlandıktan sonra nameSurname ve diğer alanları tamamen gizle
             self.loginScreenControllerView.nameSurname.isHidden = true
@@ -102,53 +140,16 @@ class LoginScreenController: UIViewController {
             
             // loginUpButton'dan sonra signUpButton'ı etkinleştir
             self.loginScreenControllerView.signInUpButton.isEnabled = true
+            self.isAnimationStarted = false
         })
     }
     
-    @objc func didSingInButtonDown(){
-        UIView.animate(withDuration: 0.2){
-            self.loginScreenControllerView.signInUpButton.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
-        }
-    }
-
-    @objc func didSingInButtonUp(){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.loginScreenControllerView.signInUpButton.transform = CGAffineTransform.identity
-            
-            // Giriş Yap butonunun animasyonlarını eski haline getir
-            self.loginScreenControllerView.signEmailTextField.alpha = 0 // Opaklığını 0 yaparak gizle
-            self.loginScreenControllerView.signPasswordTextField.alpha = 0 // Opaklığını 0 yaparak gizle
-            // Diğer öğeleri gizle
-            self.loginScreenControllerView.emailTextField.isHidden = true
-            self.loginScreenControllerView.passwordTextField.isHidden = true
-            self.loginScreenControllerView.nameSurname.isHidden = true
-            
-            // Animasyonu başlat
-            if self.isAnimationStarted {
-                self.animateDownText(self.loginScreenControllerView.nameSurname)
-                self.animateDownText(self.loginScreenControllerView.emailTextField)
-                self.animateDownText(self.loginScreenControllerView.passwordTextField)
-                self.labelComeBack(self.loginScreenControllerView.kayitOlTitleLabel)
-                self.isAnimationStarted = false
-            }
-        }, completion: { _ in
-            // Animasyon tamamlandıktan sonra giriş alanlarını tekrar eski haline getir
-            self.loginScreenControllerView.signEmailTextField.isHidden = true
-            self.loginScreenControllerView.signPasswordTextField.isHidden = true
-            
-            // Eğer loginUpButton'a basıldıysa ve signUpButton aktif hale gelmişse, signUpButton'ı tekrar devre dışı bırak
-            if self.loginScreenControllerView.loginUpButton.isEnabled {
-                self.loginScreenControllerView.signInUpButton.isEnabled = false
-            }
-        })
-    }
-
-
-    private func animateDownText(_ comeBackAnimate : UITextField){
+    private func animateDownText(_ comeBackAnimate: UITextField) {
         UIView.animate(withDuration: 1.0, animations: {
-            comeBackAnimate.transform = CGAffineTransform(translationX: 0, y: 60)
+            comeBackAnimate.transform = CGAffineTransform(translationX: 0, y: 0)
         })
     }
+    
     private func labelComeBack(_ comeBackLabel: UILabel) {
         UIView.animate(withDuration: 1.5) {
             comeBackLabel.transform = CGAffineTransform.identity
@@ -160,11 +161,34 @@ class LoginScreenController: UIViewController {
             signEmailTextField.transform = CGAffineTransform(translationX: 0, y: -60)
         })
     }
+    
     private func labelAnimate(_ labelAnimate: UILabel) {
         UIView.animate(withDuration: 1.5) {
             labelAnimate.transform = CGAffineTransform(translationX: 120, y: 0)
         }
     }
+    
+    @objc func baseButton(){
+        if loginScreenControllerView.emailTextField.text != "" && loginScreenControllerView.passwordTextField.text != ""{
+            Auth.auth().createUser(withEmail: loginScreenControllerView.emailTextField.text!, password: loginScreenControllerView.passwordTextField.text!) { authData, error in
+                if error != nil {
+                    self.makeAlert(titleInput: "Error", massageInput: error?.localizedDescription ?? "Error")
+                    
+                } else {
+                  let goVC = mainScreenVC()
+                    self.navigationController?.pushViewController(goVC, animated: true)
+                }
+            }
+            
+        } else {
+            makeAlert(titleInput: "Error", massageInput: "Email/Password")
+        }
+    }
+    func makeAlert(titleInput: String, massageInput:String ){
+        let alert = UIAlertController(title: titleInput, message: massageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+    }
 }
-
 

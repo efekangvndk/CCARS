@@ -26,6 +26,9 @@
 		AB60B30D2C000D4100E18358 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB60B30C2C000D4100E18358 /* LoginScreenController.swift */; };
 		ABAA06132C05140C0057A3AA /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA06122C05140C0057A3AA /* SignInScreen.swift */; };
 		ABAA06152C05141C0057A3AA /* SignInScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA06142C05141C0057A3AA /* SignInScreenController.swift */; };
+		ABC0C3922C0A1C3E0093A872 /* CreatCustommer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0C3912C0A1C3E0093A872 /* CreatCustommer.swift */; };
+		ABC0C3942C0A29540093A872 /* mainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0C3932C0A29540093A872 /* mainScreen.swift */; };
+		ABC0C3962C0A29830093A872 /* mainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC0C3952C0A29830093A872 /* mainScreenVC.swift */; };
 		ABD936EF2BFF6EE6003A7BCD /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */; };
 		ABD936F12BFF6F1B003A7BCD /* OnboardingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */; };
 		ABDC911A2C0411570041281C /* pp.TTF in Resources */ = {isa = PBXBuildFile; fileRef = ABDC91192C0411560041281C /* pp.TTF */; };
@@ -50,6 +53,9 @@
 		AB60B30C2C000D4100E18358 /* LoginScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
 		ABAA06122C05140C0057A3AA /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
 		ABAA06142C05141C0057A3AA /* SignInScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenController.swift; sourceTree = "<group>"; };
+		ABC0C3912C0A1C3E0093A872 /* CreatCustommer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatCustommer.swift; sourceTree = "<group>"; };
+		ABC0C3932C0A29540093A872 /* mainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainScreen.swift; sourceTree = "<group>"; };
+		ABC0C3952C0A29830093A872 /* mainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainScreenVC.swift; sourceTree = "<group>"; };
 		ABD936EE2BFF6EE6003A7BCD /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		ABD936F02BFF6F1B003A7BCD /* OnboardingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewController.swift; sourceTree = "<group>"; };
 		ABDC91192C0411560041281C /* pp.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = pp.TTF; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 		AB1344F42BFCCDD70000B0D4 /* CCARS */ = {
 			isa = PBXGroup;
 			children = (
+				ABC0C3902C0A1B6C0093A872 /* Services */,
 				AB13451F2BFCD98D0000B0D4 /* UIHelpers */,
 				AB13451C2BFCD4A80000B0D4 /* Supporting */,
 				AB13450C2BFCCF860000B0D4 /* Core */,
@@ -116,6 +123,7 @@
 		AB13450A2BFCCF620000B0D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ABC0C3912C0A1C3E0093A872 /* CreatCustommer.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 		AB13450C2BFCCF860000B0D4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				ABC0C3972C0A2A260093A872 /* Main */,
 				AB60B3082C000D1900E18358 /* SignIn */,
 				AB60B3072C000D0800E18358 /* Login */,
 				AB1345102BFCCFB40000B0D4 /* Onboarding */,
@@ -202,6 +211,22 @@
 				ABAA06142C05141C0057A3AA /* SignInScreenController.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		ABC0C3902C0A1B6C0093A872 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ABC0C3972C0A2A260093A872 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				ABC0C3932C0A29540093A872 /* mainScreen.swift */,
+				ABC0C3952C0A29830093A872 /* mainScreenVC.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +319,11 @@
 				AB1344FA2BFCCDD70000B0D4 /* SplashScreenViewController.swift in Sources */,
 				ABD936EF2BFF6EE6003A7BCD /* OnboardingScreen.swift in Sources */,
 				ABAA06132C05140C0057A3AA /* SignInScreen.swift in Sources */,
+				ABC0C3942C0A29540093A872 /* mainScreen.swift in Sources */,
+				ABC0C3922C0A1C3E0093A872 /* CreatCustommer.swift in Sources */,
 				AB60B30D2C000D4100E18358 /* LoginScreenController.swift in Sources */,
 				AB1344F62BFCCDD70000B0D4 /* AppDelegate.swift in Sources */,
+				ABC0C3962C0A29830093A872 /* mainScreenVC.swift in Sources */,
 				ABD936F12BFF6F1B003A7BCD /* OnboardingScreenViewController.swift in Sources */,
 				AB1344F82BFCCDD70000B0D4 /* SceneDelegate.swift in Sources */,
 				AB1345122BFCD08E0000B0D4 /* LogingInfo.swift in Sources */,
