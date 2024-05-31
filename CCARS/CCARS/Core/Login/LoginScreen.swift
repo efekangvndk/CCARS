@@ -124,16 +124,13 @@ class LoginScreen: UIView {
             // Üst Buttonlar
             loginUpButton.topAnchor.constraint(equalTo: topAnchor,constant: 150),
             loginUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
-            loginUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -195),
             loginUpButton.heightAnchor.constraint(equalToConstant: 50),
-            loginUpButton.widthAnchor.constraint(equalToConstant: 120),
-            
-            
+            loginUpButton.widthAnchor.constraint(equalToConstant: 120), // Genişlik boyutunu 120 olarak değiştirdim
+
             signInUpButton.topAnchor.constraint(equalTo: topAnchor, constant: 150),
-            signInUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -75),
-            signInUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 195),
+            signInUpButton.leadingAnchor.constraint(equalTo: loginUpButton.trailingAnchor, constant: 50), // loginUpButton'ın hemen sağına yerleştirdim
             signInUpButton.heightAnchor.constraint(equalToConstant: 50),
-            signInUpButton.widthAnchor.constraint(equalToConstant: 50),
+            signInUpButton.widthAnchor.constraint(equalToConstant: 120), // Genişlik boyutunu 120 olarak değiştirdim
         
             // Separator view constraints
         
