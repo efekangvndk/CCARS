@@ -19,24 +19,31 @@ class LoginScreenController: UIViewController {
         view.addSubview(loginScreenControllerView)
         setupView()
         constraintSetting()
+        
     }
     
     private func setupView() {
         view.backgroundColor = .black
         loginScreenControllerView.loginScrennImage.image = UIImage(named: "logo")
         
+        
+        
         //isHiddenSettings
         loginScreenControllerView.signEmailTextField.isHidden = true
         loginScreenControllerView.signPasswordTextField.isHidden = true
+        loginScreenControllerView.girisYapButton.isHidden = true
+        loginScreenControllerView.forgettenPasswordButton.isHidden = true
+
         
         //Buttonlar ve işlevleri
         loginScreenControllerView.loginUpButton.addTarget(self, action: #selector(loginDownButtonClicked), for: .touchDown)
         loginScreenControllerView.loginUpButton.addTarget(self, action: #selector(loginUpButtonClicked), for: [.touchUpInside, .touchUpOutside])
+        
+        loginScreenControllerView.girisYapButton.addTarget(self, action: #selector(girisYapButtonClicked), for: .touchUpInside)
         loginScreenControllerView.loginButton.addTarget(self, action: #selector(baseButton), for: .touchUpInside)
         
-        
         loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(signInDownButtonClicked), for: .touchDown)
-        loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(signInUpButtonClicked), for: [.touchUpInside , .touchUpOutside])
+        loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(signInUpButtonClicked), for: [.touchUpInside, .touchUpOutside])
         loginScreenControllerView.signInUpButton.isEnabled = false
         
         // Giriş Yap title label oluşturulduktan sonra metni sağa kaydır
@@ -60,8 +67,7 @@ class LoginScreenController: UIViewController {
         YapıAyarları.warningLabel.warningLabelConst(for: loginScreenControllerView.warningLabel, in: view.self)
     }
     
-    
-    private func constraintSetting(){
+    private func constraintSetting() {
         //Ekranı bölen çizgi ayarları 1.
         loginScreenControllerView.lineView.backgroundColor = UIColor.gray
         loginScreenControllerView.lineView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +75,6 @@ class LoginScreenController: UIViewController {
         loginScreenControllerView.lineView2.backgroundColor = UIColor.gray
         loginScreenControllerView.lineView2.translatesAutoresizingMaskIntoConstraints = false
     }
-    
     
     @objc func loginDownButtonClicked() {
         UIView.animate(withDuration: 0.2) {
@@ -81,32 +86,37 @@ class LoginScreenController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.loginScreenControllerView.signInUpButton.transform = CGAffineTransform.identity
             
-            // Giriş Yap butonunun animasyonlarını eski haline getir
-            self.loginScreenControllerView.signEmailTextField.alpha = 0 // Opaklığını 0 yaparak gizle
-            self.loginScreenControllerView.signPasswordTextField.alpha = 0 // Opaklığını 0 yaparak gizle
-            // Diğer öğeleri görünür hale getir
+            self.loginScreenControllerView.signEmailTextField.alpha = 0
+            self.loginScreenControllerView.signPasswordTextField.alpha = 0
+            self.loginScreenControllerView.girisYapButton.alpha = 0
+            
             self.loginScreenControllerView.emailTextField.isHidden = false
             self.loginScreenControllerView.passwordTextField.isHidden = false
             self.loginScreenControllerView.nameSurname.isHidden = false
-            self.loginScreenControllerView.nameSurname.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
-            self.loginScreenControllerView.emailTextField.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
-            self.loginScreenControllerView.passwordTextField.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
+            self.loginScreenControllerView.nameSurname.alpha = 1
+            self.loginScreenControllerView.emailTextField.alpha = 1
+            self.loginScreenControllerView.passwordTextField.alpha = 1
             
-            // Animasyonu başlat
+            self.loginScreenControllerView.loginButton.isHidden = false
+            self.loginScreenControllerView.warningLabel.isHidden = false
+            
             self.animateDownText(self.loginScreenControllerView.nameSurname)
             self.animateDownText(self.loginScreenControllerView.emailTextField)
             self.animateDownText(self.loginScreenControllerView.passwordTextField)
             self.labelComeBack(self.loginScreenControllerView.kayitOlTitleLabel)
         }, completion: { _ in
-            // Animasyon tamamlandıktan sonra giriş alanlarını tekrar eski haline getir
             self.loginScreenControllerView.signEmailTextField.isHidden = true
             self.loginScreenControllerView.signPasswordTextField.isHidden = true
+            self.loginScreenControllerView.girisYapButton.isHidden = true
+            self.loginScreenControllerView.forgettenPasswordButton.isHidden = false
+
             
-            // Eğer loginUpButton'a basıldıysa ve signUpButton aktif hale gelmişse, signUpButton'ı tekrar devre dışı bırak
             self.loginScreenControllerView.signInUpButton.isEnabled = true
             self.isAnimationStarted = false
+            
+            // girisYapButton'ı gizle
+            self.loginScreenControllerView.girisYapButton.isHidden = true
         })
-        
     }
     
     @objc func signInDownButtonClicked() {
@@ -125,8 +135,17 @@ class LoginScreenController: UIViewController {
             // Diğer öğeleri görünür hale getir
             self.loginScreenControllerView.signEmailTextField.isHidden = false
             self.loginScreenControllerView.signPasswordTextField.isHidden = false
+            self.loginScreenControllerView.girisYapButton.isHidden = false
             self.loginScreenControllerView.signEmailTextField.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
             self.loginScreenControllerView.signPasswordTextField.alpha = 1 // Opaklığını 1 yaparak görünür hale getir
+            self.loginScreenControllerView.girisYapButton.alpha = 1
+            
+            // loginButton gizle ve warningLabel gizle
+            self.loginScreenControllerView.loginButton.isHidden = true
+            self.loginScreenControllerView.warningLabel.isHidden = true
+            
+            // girisYapButton yukarı kaydır
+            self.girisYapButtonAnimate(self.loginScreenControllerView.girisYapButton)
             
             // Animasyonu başlat
             self.animateTextFieldEmail(self.loginScreenControllerView.signEmailTextField)
@@ -144,6 +163,13 @@ class LoginScreenController: UIViewController {
         })
     }
     
+    
+    private func girisYapButtonAnimate(_ girisYapButton: UIButton){
+        UIView.animate(withDuration: 1.0, animations: {
+            girisYapButton.transform = CGAffineTransform(translationX: 0, y: -20)
+        })
+    }
+    
     private func animateDownText(_ comeBackAnimate: UITextField) {
         UIView.animate(withDuration: 1.0, animations: {
             comeBackAnimate.transform = CGAffineTransform(translationX: 0, y: 0)
@@ -151,7 +177,7 @@ class LoginScreenController: UIViewController {
     }
     
     private func labelComeBack(_ comeBackLabel: UILabel) {
-        UIView.animate(withDuration: 1.5) {
+        UIView.animate(withDuration: 2) {
             comeBackLabel.transform = CGAffineTransform.identity
         }
     }
@@ -163,27 +189,56 @@ class LoginScreenController: UIViewController {
     }
     
     private func labelAnimate(_ labelAnimate: UILabel) {
-        UIView.animate(withDuration: 1.5) {
+        UIView.animate(withDuration: 2) {
             labelAnimate.transform = CGAffineTransform(translationX: 120, y: 0)
         }
     }
     
-    @objc func baseButton(){
-        if loginScreenControllerView.emailTextField.text != "" && loginScreenControllerView.passwordTextField.text != ""{
-            Auth.auth().createUser(withEmail: loginScreenControllerView.emailTextField.text!, password: loginScreenControllerView.passwordTextField.text!) { authData, error in
-                if error != nil {
-                    self.makeAlert(titleInput: "Error", massageInput: error?.localizedDescription ?? "Error")
-                    
-                } else {
-                  let goVC = mainScreenVC()
-                    self.navigationController?.pushViewController(goVC, animated: true)
-                }
+    @objc func baseButton() {
+        guard let email = loginScreenControllerView.emailTextField.text, !email.isEmpty else {
+            makeAlert(titleInput: "Error", massageInput: "Please enter email")
+            return
+        }
+        
+        guard let password = loginScreenControllerView.passwordTextField.text, !password.isEmpty else {
+            makeAlert(titleInput: "Error", massageInput: "Please enter password")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authData, error in
+            if let error = error {
+                self.makeAlert(titleInput: "Error", massageInput: error.localizedDescription)
+            } else {
+                let goVC = mainScreenVC()
+                self.navigationController?.pushViewController(goVC, animated: true)
             }
-            
-        } else {
-            makeAlert(titleInput: "Error", massageInput: "Email/Password")
         }
     }
+
+    
+    @objc func girisYapButtonClicked() {
+        guard let email = loginScreenControllerView.signEmailTextField.text, !email.isEmpty else {
+            makeAlert(titleInput: "Error", massageInput: "Please enter email")
+            return
+        }
+        
+        guard let password = loginScreenControllerView.signPasswordTextField.text, !password.isEmpty else {
+            makeAlert(titleInput: "Error", massageInput: "Please enter password")
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { authData, error in
+            if let error = error {
+                self.makeAlert(titleInput: "Error", massageInput: error.localizedDescription)
+            } else {
+                let goVC = mainScreenVC()
+                self.navigationController?.pushViewController(goVC, animated: true)
+            }
+        }
+    }
+
+
+    
     func makeAlert(titleInput: String, massageInput:String ){
         let alert = UIAlertController(title: titleInput, message: massageInput, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
@@ -191,4 +246,3 @@ class LoginScreenController: UIViewController {
         self.present(alert, animated: true)
     }
 }
-

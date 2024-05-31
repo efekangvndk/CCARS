@@ -24,7 +24,8 @@ class LoginScreen: UIView {
     var loginButton = UICompanentsHelper.creatCustomButton(buttonName: "Kayıt Ol", tintColor: .black, cornerRadius: 20, borderWidth: 0.6, borderColor: UIColor.red.cgColor, backgroundC: UIColor.white.cgColor)
     var loginUpButton = UICompanentsHelper.creatCustomButton(buttonName: "Kayıt Ol", tintColor: .white, cornerRadius: 24, borderWidth: nil, borderColor: nil, backgroundC: nil)
     var signInUpButton = UICompanentsHelper.creatCustomButton(buttonName: "Giriş Yap", tintColor: .white, cornerRadius: 24, borderWidth: nil, borderColor: nil, backgroundC: nil)
-    
+    var girisYapButton = UICompanentsHelper.creatCustomButton(buttonName: "Giriş Yap", tintColor: .black, cornerRadius: 24, borderWidth: 0.6, borderColor: UIColor.red.cgColor, backgroundC: UIColor.white.cgColor)
+    var forgettenPasswordButton = UICompanentsHelper.creatCustomButton(buttonName: "Şifremi Unuttum", tintColor: .gray, cornerRadius: nil, borderWidth: nil, borderColor: nil, backgroundC: nil)
     
     var nameSurname = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white , textColor: .white, placeholder: "Ad & Soyad :", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none, borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
     var passwordTextField = UICompanentsHelper.createCustomTextField(text: "", tintColor: .white, textColor: .white, placeholder: "Parola :", placeholderColor: .lightGray, fontName: "Retro", size: 15, borderStyle: .none , borderColor: UIColor.white.cgColor, cornerRadius: 24, borderWidth: 0.6)
@@ -49,6 +50,8 @@ class LoginScreen: UIView {
         addSubview(girisYapTitleLabel)
         addSubview(loginUpButton)
         addSubview(signInUpButton)
+        addSubview(forgettenPasswordButton)
+        addSubview(girisYapButton)
         
         addSubview(nameSurname)
         addSubview(emailTextField)
@@ -63,6 +66,8 @@ class LoginScreen: UIView {
         addSubview(lineView)
         addSubview(yadaLabel)
         addSubview(lineView2)
+        
+        
         
         
         nameSurname.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: nameSurname.frame.height))
@@ -83,7 +88,8 @@ class LoginScreen: UIView {
         YapıAyarları.emailTextField.emailTextFieldConst(for: passwordTextField, in: self)
         YapıAyarları.passwordTextField.passwordTextFieldConst(for: emailTextField, in: self)
 
-        
+        girisYapButton.translatesAutoresizingMaskIntoConstraints = false
+        forgettenPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         kayitOlTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         girisYapTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         loginUpButton.translatesAutoresizingMaskIntoConstraints = false
@@ -131,6 +137,11 @@ class LoginScreen: UIView {
             signInUpButton.leadingAnchor.constraint(equalTo: loginUpButton.trailingAnchor, constant: 2), // loginUpButton'ın hemen sağına yerleştirdim
             signInUpButton.heightAnchor.constraint(equalToConstant: 50),
             signInUpButton.widthAnchor.constraint(equalToConstant: 120), // Genişlik boyutunu 120 olarak değiştirdim
+            
+            girisYapButton.topAnchor.constraint(equalTo: topAnchor, constant: 395),
+            girisYapButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -408),
+            girisYapButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -43),
+            girisYapButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 43),
         
             // Separator view constraints
         
@@ -148,8 +159,13 @@ class LoginScreen: UIView {
                 lineView2.heightAnchor.constraint(equalToConstant: 1),
                 lineView2.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 237.25),
                 lineView2.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-                lineView2.widthAnchor.constraint(equalToConstant: 152.25)
+                lineView2.widthAnchor.constraint(equalToConstant: 152.25),
             
+           
+              
+                    forgettenPasswordButton.topAnchor.constraint(equalTo: topAnchor, constant: 464),
+                    forgettenPasswordButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 133),
+                
         ])
     }
 }
