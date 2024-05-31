@@ -109,6 +109,7 @@ class LoginScreenController: UIViewController {
             self.loginScreenControllerView.signPasswordTextField.isHidden = true
             self.loginScreenControllerView.girisYapButton.isHidden = true
             self.loginScreenControllerView.forgettenPasswordButton.isHidden = false
+            self.loginScreenControllerView.girisYapButton.isHidden = false
 
             
             self.loginScreenControllerView.signInUpButton.isEnabled = true
