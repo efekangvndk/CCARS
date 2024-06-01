@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 
+
 class LoginScreenController: UIViewController {
     
     var loginScreenControllerView = LoginScreen()
@@ -26,21 +27,21 @@ class LoginScreenController: UIViewController {
         view.backgroundColor = .black
         loginScreenControllerView.loginScrennImage.image = UIImage(named: "logo")
         
-        
-        
         //isHiddenSettings
         loginScreenControllerView.signEmailTextField.isHidden = true
         loginScreenControllerView.signPasswordTextField.isHidden = true
         loginScreenControllerView.girisYapButton.isHidden = true
         loginScreenControllerView.forgettenPasswordButton.isHidden = true
-
+        
         
         //Buttonlar ve işlevleri
+        loginScreenControllerView.forgettenPasswordButton.addTarget(self, action: #selector(tabForgettenButton), for: .touchUpInside)
         loginScreenControllerView.loginUpButton.addTarget(self, action: #selector(loginDownButtonClicked), for: .touchDown)
         loginScreenControllerView.loginUpButton.addTarget(self, action: #selector(loginUpButtonClicked), for: [.touchUpInside, .touchUpOutside])
         
         loginScreenControllerView.girisYapButton.addTarget(self, action: #selector(girisYapButtonClicked), for: .touchUpInside)
         loginScreenControllerView.loginButton.addTarget(self, action: #selector(baseButton), for: .touchUpInside)
+        
         
         loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(signInDownButtonClicked), for: .touchDown)
         loginScreenControllerView.signInUpButton.addTarget(self, action: #selector(signInUpButtonClicked), for: [.touchUpInside, .touchUpOutside])
@@ -66,7 +67,7 @@ class LoginScreenController: UIViewController {
         loginScreenControllerView.warningLabel.attributedText = attributedString
         YapıAyarları.warningLabel.warningLabelConst(for: loginScreenControllerView.warningLabel, in: view.self)
     }
-    
+    //MARK: kısa constrain.
     private func constraintSetting() {
         //Ekranı bölen çizgi ayarları 1.
         loginScreenControllerView.lineView.backgroundColor = UIColor.gray
@@ -74,6 +75,14 @@ class LoginScreenController: UIViewController {
         //Ekranı bölen çizgi ayarları 2.
         loginScreenControllerView.lineView2.backgroundColor = UIColor.gray
         loginScreenControllerView.lineView2.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    //MARK: Button ve işlemleri
+    
+    @objc func tabForgettenButton(){
+        let forgettenPasswordVC = ForgetPasswordVC()
+        self.navigationController?.pushViewController(forgettenPasswordVC, animated: true)
+        
     }
     
     @objc func loginDownButtonClicked() {
@@ -110,7 +119,7 @@ class LoginScreenController: UIViewController {
             self.loginScreenControllerView.girisYapButton.isHidden = true
             self.loginScreenControllerView.forgettenPasswordButton.isHidden = false
             self.loginScreenControllerView.girisYapButton.isHidden = false
-
+            
             
             self.loginScreenControllerView.signInUpButton.isEnabled = true
             self.isAnimationStarted = false
@@ -164,7 +173,7 @@ class LoginScreenController: UIViewController {
         })
     }
     
-    
+    //MARK: animasyonlar.
     private func girisYapButtonAnimate(_ girisYapButton: UIButton){
         UIView.animate(withDuration: 1.0, animations: {
             girisYapButton.transform = CGAffineTransform(translationX: 0, y: -20)
@@ -215,7 +224,7 @@ class LoginScreenController: UIViewController {
             }
         }
     }
-
+    
     
     @objc func girisYapButtonClicked() {
         guard let email = loginScreenControllerView.signEmailTextField.text, !email.isEmpty else {
@@ -237,9 +246,8 @@ class LoginScreenController: UIViewController {
             }
         }
     }
-
-
     
+ //MARK: ALert func kısa yol.
     func makeAlert(titleInput: String, massageInput:String ){
         let alert = UIAlertController(title: titleInput, message: massageInput, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)

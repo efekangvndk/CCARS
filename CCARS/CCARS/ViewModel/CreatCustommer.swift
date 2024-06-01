@@ -34,7 +34,7 @@ class CreatCustommer: UIViewController {
                     self.makeAlert(titleInput: "Error", massageInput: error?.localizedDescription ?? "Error")
                     
                 } else {
-                  let goVC = SignInScreenController()
+                  let goVC = mainScreenVC()
                     self.navigationController?.pushViewController(goVC, animated: true)
                 }
             }
